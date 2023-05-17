@@ -1,0 +1,21 @@
+main {
+    display: flex;
+    padding: 0 60px;
+    flex-direction: row;
+}
+.contenedor-ofertas {
+    width: 40%;
+}
+.contenedor-descripcion {
+    width: 60%;
+}
+article {
+    padding: 2%;
+    flex-direction: row;
+    align-items: center;
+}
+.img-fabrica {
+    width: 180px;
+    margin-right: 20px;
+}
+
