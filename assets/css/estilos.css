@@ -57,7 +57,7 @@ header{
 
 .menu nav{
     margin: 0px S0px;
-
+    
 }
 
 .menu  nav ul{
@@ -177,17 +177,15 @@ width: 100%;
     header{
         padding: 40px;
     }
-    .btn__inicio{
-        
-    }
+    
 
 }
 
-@media screen and (max-width:720px){
+@media screen and (max-width:1080px){
     .menu nav{
         position: fixed;
         top: 0%;
-        right: -250px;
+        right: -200px;
        background:var(--color_text_quinto);
        width: 250px;
        height: 100vh;
@@ -357,12 +355,9 @@ width: 100%;
     justify-content: center;
     align-items: center;
     height: 100px;
-    
-
 }
 .btn__accinicio{
     padding: 5px 8px;
-    
     border-radius: 100px;
     background-color: var(--color_text_secundario);
     color: rgb(255, 255, 255);
