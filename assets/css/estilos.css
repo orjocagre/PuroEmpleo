@@ -242,7 +242,7 @@ width: 100%;
   
  
 }
-
+/*
 @media screen and (min-width:480px) {
     .busqueda{
         width: 180px;
@@ -272,8 +272,8 @@ width: 100%;
     .cargo{
         width: 500px;
     }
-    
-}
+    XD XD
+}*/
 .contenedor_barra {
     display: flex;
     justify-content: center;
