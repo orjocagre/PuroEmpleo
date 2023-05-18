@@ -198,6 +198,7 @@ width: 100%;
     
 }
 .lugar{
+    width: calc((100%-40px)/2);
     justify-content: center;
     align-items: center;
     top: 50%;
@@ -224,6 +225,7 @@ width: 100%;
     height: 40px;
     font-size: 30px;
     align-items: flex-start;
+
 }
 .iconos_busquedas{
     width: 40px;
@@ -239,10 +241,10 @@ width: 100%;
     color: black;
     font-size: 20px;
     line-height: 60px;
-   
     border-radius: 50px;
 }
 .cargo{
+    width: calc((100%-40px)/2);
     display: inline-block;
     justify-content: center;
     align-items: center;
@@ -284,10 +286,64 @@ width: 100%;
     background: var(--color_text-primario);
     
 }
+footer{
+    
+    width: 100%;
+    padding: 50px 0px;
+    background-image: url(/assets/img/background-footer.svg);
+    background-size: cover;
+    
+}
+.container__footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 20px;
 
+}
+.box__footer{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    font-size: 20px;
+}
+.logo_footer img{
+    width: 200px;
+}
+.acerca_de{
+    max-width: 350px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: var(--color_text-primario);
+    font-size: 20px;
+}
+.box__footer a{
+    margin-top: 10px;
+    color: #E5841A;
+    font-weight: 500;
+    
+}
+.box__footer a:hover{
+    opacity: 0.8;
+}
+.box_copyrigt{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+.box_copyrigt p{
+    margin-top: 20px;
+    color: var(--color_text_secundario);
+}
+.box_copyrigt hr{
+    border: none;
+    height: 1px;
+    background-color: var(--color_text_secundario);
 
-
-
+}
 
 /*Responsive*/
 
@@ -304,11 +360,11 @@ width: 100%;
     
     }
     .logo img{
-        width: 120px;
-      
+        width: 250px;
+      margin: 0px;
     }
     .container__header{
-        width: 100px;
+        width: 100%;
     }
     .container__portada{
     
@@ -333,9 +389,10 @@ width: 100%;
         
     }
     .text__portada p{
-        font-size: 15px;
+        font-size: 20px;
         font-weight: normal;
         text-align: justify;
+
         
     }
     .imagen_portada{
@@ -389,19 +446,31 @@ width: 100%;
     }
     
     .barreda_de_busqueda{
-       height: 200px;
+       height:auto;
         flex-direction: column;
         border: none;
         width: 100vw;
+        margin-top: 10px;
+    }
+    .boton{
+        margin-top: 20px;
     }
     .cargo{
+        width: 90%;
         border-bottom-left-radius: 0px;    
         border-bottom-right-radius: 0px; 
         margin-bottom: 2px;
         
     }
-
+    .buscar_tcargo{
+        width: 80%;
+    }
+    .buscar_lugar{
+       
+        width: 80%;
+    }
     .lugar{
+        width: 90%;
         border-top-left-radius: 0px;    
         border-top-right-radius: 0px; 
 
