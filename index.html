@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PuroEmpleo</title>
-    <script src="https://kit.fontawesome.com/a9c2562c5e.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a9c2562c5e.js?ver=1.0" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/estilos.css?ver=1.0">
+    <link rel="stylesheet" href="/assets/css/normalize.css">
     
 </head>
 <body>
@@ -18,16 +19,18 @@
             <a href="#">
               <img src="assets/img/logo/tabacologo.png" alt="">
             </a>
-         </div>
-         <div class="menu">
+        </div>
+
+        <div class="menu">
             <i class="fa-solid fa-bars" id="btn_menu"></i>
             <div id="back_menu"></div>
+
             <nav id="nav">
                 <img src="/assets/img/logo/tabacologo.png" alt="">
 
                 <ul>
                     
-                    <li><a href="#">Quienes somos</a></li>
+                    <li><a href="/puroempleoinfo.html">Quienes somos</a></li>
                     <li><a href="#">Contactos</a></li>
                     
                     <li><a href="#" class="btn__inicio">Inicia Sesión</a></li>
@@ -37,7 +40,7 @@
             
            
             
-         </div>
+        </div>
     </div>
 
    
@@ -61,29 +64,27 @@
         </div>
         <div class="contenedor_barra">
             <div class="barreda_de_busqueda">
-                <a href="" class="btn_cargo">
-                    
-                    <i class="fa-solid fa-briefcase"></i>
-                </a>
                 
                 <div class="cargo">
+                    <i class="fa-solid fa-briefcase iconos_busquedas " ></i>
                     <input type="text" class="buscar_tcargo" placeholder="Cargo o puesto">
-                    <i class="fa-regular fa-briefcase-blank"></i>
                 </div>
-                <div class="busqueda">
-                   <input type="text" class="buscar_lugar" placeholder="Lugar">
-                  
-                   
+
+                <div class="lugar">
+                    <i class="fa-solid fa-location-dot iconos_busquedas"></i>
+                    <input type="text" class="buscar_lugar" placeholder="Lugar">
                 </div>
+
                 <a href="" class="boton">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                 </a>
+                </a>
+
             </div>  
             
         </div>
         <div class="acceso_plataforma">
                <div class="btns_acceso">
-                 <a href="#" class="btn__accinicio">Inicia Sesión</a>
+                 <a href="./busqueda.html" class="btn__accinicio">Inicia Sesión</a>
                  <a href="#" class="btn__accregistro">Registrate</a>
                </div>
                 
@@ -91,7 +92,42 @@
         </div>
 
    </main>
+   <footer>
+      <div class="container__footer">
+        <div class="box__footer">
+            <div class="logo_footer">
+                <img src="/assets/img/logo/tabacologo.png" alt="">
      
-     <script src="/assets/js/script.js"></script>
+            </div>
+            <div class="acerca_de">
+                <p>Somos la bolsa de empleo del Diamante la Segovia, acercandote a tus mejores oportunidades en el sector del tabaco</p>
+
+            </div>
+
+        </div>
+        <div class="box__footer">
+         
+            <a href="#"><i class="fa-brands fa-square-facebook"></i>Facebook</a>
+            
+        </div>
+        <div class="box__footer">
+            <a href="#"><i class="fa-brands fa-square-whatsapp"></i>WhatsApp</a>
+        </div>
+
+        <div class="box__footer">
+            <a href="#"><i class="fa-brands fa-square-instagram"></i>Instagram</a>
+        </div>
+       
+
+      </div>
+      <div class="box_copyrigt">
+        <hr>
+            <p>Todos los derechos reservados © 2023 
+                <b b >PuroEmpleo </b></p>
+      </div>
+
+   </footer>
+     
+     <script src="/assets/js/script.js?ver=1.0"></script>
 </body>
 </html>

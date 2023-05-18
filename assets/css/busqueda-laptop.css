@@ -1,0 +1,47 @@
+header {
+    display: block;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+main {
+    display: flex;
+    flex-direction: row;
+    padding: 50px 60px 0 60px;
+}
+.contenedor-ofertas {
+    width: 40%;
+}
+.contenedor-descripcion {
+    width: 60%;
+    display: block;
+}
+article {
+    padding: 2%;
+    flex-direction: row;
+    align-items: center;
+}
+.img-fabrica {
+    width: 180px;
+    margin-right: 20px;
+}
+article:hover {
+    transform: scale(1.025);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/*----------------------contenedor descripcion-----------------------------*/
+
+
+.encabezado h1 {
+    font-size: 60px;
+}
+.encabezado h2 {
+    font-size: 25px;
+}
+.encabezado button {
+    font-size: 25px;
+}
+.contenedor-descripcion .info-general {
+    padding-right: 100px;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
+
 *{
     margin: 0;
     padding: 0;
@@ -8,6 +9,11 @@
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
 
+}
+
+
+body{min-height: 100vh;
+    
 }
 :root{
     --color_text-primario:#E5841A;
@@ -57,7 +63,7 @@ header{
 
 .menu nav{
     margin: 0px S0px;
-
+    
 }
 
 .menu  nav ul{
@@ -170,20 +176,202 @@ width: 100%;
 
 
 
-/*Responsive*/
 
 
-@media screen and (max-width:1200px){
-    header{
-        padding: 40px;
-    }
-    .btn__inicio{
-        
-    }
+.contenedor_barra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.barreda_de_busqueda{
+
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 80%;
+    width: 80%;
+    border-color:var(--color_text_secundario);
+    border-style:outset;
+    height: 80px;
+    border-radius: 60px;
+    
+}
+.lugar{
+    width: calc((100%-40px)/2);
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    padding: 10px;
+    height: 60px;
+    display: inline-block;
+    border-radius: 40px; 
+    background-color:#17f3170e;
+}
+.buscar_lugar{
+    border: none;
+    background: none;
+    outline: none;
+    color: black;
+    font-size: 20px;
+    line-height: 60px;
+    
+    border-radius: 50px; 
+}
+
+.boton{
+    width: 40px;
+    color: var(--color_text_cuaternario);
+    height: 40px;
+    font-size: 30px;
+    align-items: flex-start;
+
+}
+.iconos_busquedas{
+    width: 40px;
+    color: var(--color_text_cuaternario);
+    height: 40px;
+    font-size: 30px;
+    align-items: flex-start;
+}
+.buscar_tcargo{
+    border: none;
+    background: none;
+    outline: none;
+    color: black;
+    font-size: 20px;
+    line-height: 60px;
+    border-radius: 50px;
+}
+.cargo{
+    width: calc((100%-40px)/2);
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    background: #03aa030e;
+    padding: 10px;
+    height: 60px;
+    border-radius: 40px;  
+}
+.acceso_plataforma {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+.btn__accinicio{
+    padding: 5px 8px;
+    border-radius: 100px;
+    background-color: var(--color_text_secundario);
+    color: rgb(255, 255, 255);
+    transition: all 300ms;
+}
+.btn__accregistro{
+    padding: 5px 8px;
+    border-radius: 100px;
+    background-color:  var(--color_text_secundario);
+    color: white;
+    transition: all 300ms;
+    margin: 0px 20px;
+  
+}
+.btn__accinicio:hover{
+    color:rgb(0, 0, 0);
+    background: var(--color_text-primario);
+    
+}
+.btn__accregistro:hover{
+    color:rgb(0, 0, 0);
+    background: var(--color_text-primario);
+    
+}
+footer{
+    
+    width: 100%;
+    padding: 50px 0px;
+    background-image: url(/assets/img/background-footer.svg);
+    background-size: cover;
+    
+}
+.container__footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 20px;
+
+}
+.box__footer{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    font-size: 20px;
+}
+.logo_footer img{
+    width: 200px;
+}
+.acerca_de{
+    max-width: 350px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: var(--color_text-primario);
+    font-size: 20px;
+}
+.box__footer a{
+    margin-top: 10px;
+    color: #E5841A;
+    font-weight: 500;
+    
+}
+.box__footer a:hover{
+    opacity: 0.8;
+}
+.box_copyrigt{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+.box_copyrigt p{
+    margin-top: 20px;
+    color: var(--color_text_secundario);
+}
+.box_copyrigt hr{
+    border: none;
+    height: 1px;
+    background-color: var(--color_text_secundario);
 
 }
 
-@media screen and (max-width:720px){
+/*Responsive*/
+
+
+/*Cuando sea */
+
+@media screen and (max-width:1080px){
+
+    header{
+        width: 100%;
+        height: 100px;
+        position:static;
+        z-index: 100;
+    
+    }
+    .logo img{
+        width: 250px;
+      margin: 0px;
+    }
+    .container__header{
+        width: 100%;
+    }
+    .container__portada{
+    
+        padding-top: 0px;
+       
+    
+    }
     .menu nav{
         position: fixed;
         top: 0%;
@@ -195,7 +383,21 @@ width: 100%;
        z-index: 1;
        transition: all 300ms;
     }
-    
+    .text__portada{
+        
+        padding-right: 0px;
+        
+    }
+    .text__portada p{
+        font-size: 20px;
+        font-weight: normal;
+        text-align: justify;
+
+        
+    }
+    .imagen_portada{
+        display: none;
+    }
     .menu ul{
         flex-direction: column;
         margin-top: 40px;
@@ -235,155 +437,46 @@ width: 100%;
         border-radius: 50px;
         cursor: pointer;
         transition: all 300ms;
+        
     }
 
     .menu #btn_menu:hover{
 
         background:rgb(255, 255, 255,0.2) ;
     }
-  
- 
-}
-
-@media screen and (min-width:480px) {
-    .busqueda{
-        width: 180px;
-
+    
+    .barreda_de_busqueda{
+       height:auto;
+        flex-direction: column;
+        border: none;
+        width: 100vw;
+        margin-top: 10px;
+    }
+    .boton{
+        margin-top: 20px;
     }
     .cargo{
-        width: 180px;
+        width: 90%;
+        border-bottom-left-radius: 0px;    
+        border-bottom-right-radius: 0px; 
+        margin-bottom: 2px;
+        
     }
-    
-}
-@media screen and (min-width:780px) {
-    .busqueda{
-        width: 300px;
-      
+    .buscar_tcargo{
+        width: 80%;
     }
-    .cargo{
-        width: 300px;
+    .buscar_lugar{
+       
+        width: 80%;
     }
-    
-}
-@media screen and (min-width:1024px) {
-    .busqueda{
-        width: 500px;
-      
+    .lugar{
+        width: 90%;
+        border-top-left-radius: 0px;    
+        border-top-right-radius: 0px; 
+
+
     }
 
-    .cargo{
-        width: 500px;
-    }
-    
-}
-.contenedor_barra {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.barreda_de_busqueda{
-
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 80%;
-    width: 80%;
-    border-color:var(--color_text_secundario);
-    border-style:outset;
-    height: 80px;
-    border-radius: 60px;
-    
-}
-.busqueda{
-    justify-content: center;
-    align-items: center;
-    top: 50%;
-    padding: 10px;
-    height: 60px;
-    display: inline-block;
-    border-radius: 40px; 
-    background-color:#17f3170e;
-}
-.buscar_lugar{
-    border: none;
-    background: none;
-    outline: none;
-    color: black;
-    font-size: 20px;
-    line-height: 60px;
-    
-    border-radius: 50px; 
-}
-
-.boton{
-    width: 40px;
-    color: var(--color_text_cuaternario);
-    height: 40px;
-    font-size: 30px;
-    align-items: flex-start;
-}
-.btn_cargo{
-    width: 40px;
-    color: var(--color_text_cuaternario);
-    height: 40px;
-    font-size: 30px;
-    align-items: flex-start;
-}
-.buscar_tcargo{
-    border: none;
-    background: none;
-    outline: none;
-    color: black;
-    font-size: 20px;
-    line-height: 60px;
    
-    border-radius: 50px;
-}
-.cargo{
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    top: 50%;
-    background: #17f3170e;
-    padding: 10px;
-    height: 60px;
-    border-radius: 40px;       
-    
-}
-.acceso_plataforma {
-    display: flex;
-    
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    
-
-}
-.btn__accinicio{
-    padding: 5px 8px;
-    
-    border-radius: 100px;
-    background-color: var(--color_text_secundario);
-    color: rgb(255, 255, 255);
-    transition: all 300ms;
-}
-.btn__accregistro{
-    padding: 5px 8px;
-    border-radius: 100px;
-    background-color:  var(--color_text_secundario);
-    color: white;
-    transition: all 300ms;
-    margin: 0px 20px;
-  
-}
-.btn__accinicio:hover{
-    color:rgb(0, 0, 0);
-    background: var(--color_text-primario);
-    
-}
-.btn__accregistro:hover{
-    color:rgb(0, 0, 0);
-    background: var(--color_text-primario);
-    
+ 
 }

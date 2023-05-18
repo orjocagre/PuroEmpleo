@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body{
+    position: absolute;
+    
+    
+}
+header{
+    position: fixed;
+}
+    
+:root{
+    --color_text-primario:#E5841A;
+    --color_text_secundario:#5D7C29;
+    --color_text_terciario:#1F2B0B;
+    --color_text_cuaternario:#643604;
+    --color_text_quinto:beige;;
+    
+    
+    
+}
+.nosotros_somos{
+    max-width: 1200px;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    
+}
+.nosotros_somos p{
+    font-size: 25px;
+    margin-top: 21px;
+    text-align: justify;
+    
+   color: var(--color_text_cuaternario);
+}
+.nosotros_somos h1{
+    
+    color: var(--color_text_terciario);
+}
+
+.imagen_nosotros{
+    
+    height: 100%;
+    
+    display: flex;
+   
+    align-items: center;
+    padding: 0px 20px;
+}
+.imagen_nosotros img{
+    
+    width: 500px;
+    height: 350px;
+    
+}
+.somos{
+    margin-top: 50px;
+    display: block;
+    
+}
