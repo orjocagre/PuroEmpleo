@@ -297,9 +297,9 @@ width: 100%;
 @media screen and (max-width:1080px){
 
     header{
-        width: 100px;
+        width: 100%;
         height: 100px;
-        position:inherit;
+        position:static;
         z-index: 100;
     
     }
@@ -398,7 +398,7 @@ width: 100%;
         border-bottom-left-radius: 0px;    
         border-bottom-right-radius: 0px; 
         margin-bottom: 2px;
-        background: #1F2B0B;
+        
     }
 
     .lugar{
