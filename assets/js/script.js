@@ -17,4 +17,25 @@ function ocultar_menu(){
 
     
 }
+/*MOSTRAR AL DAR CLIC MENU EN PERFIL DE PERSONA */
+var clic = 1;
 
+function divLogin(){ 
+
+   if(clic==1){
+
+   document.getElementById("caja").style.height = "125px";
+   document.getElementById("texto_info").style.display="block";
+
+   clic = clic + 1;
+
+   } else{
+
+       document.getElementById("caja").style.height = "0px";  
+       document.getElementById("texto_info").style.display="none";    
+
+    clic = 1;
+
+   }   
+
+}
