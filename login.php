@@ -19,16 +19,20 @@
 
         <h3>Que bueno que estas de vuelta</h3>
 
+        <?php
+        include "config.php"
+        include "controlador/controlador_login.php"
+        ?>
         <input type="text" name="user" placeholder="Ingrese su usuario" required class="box">
         <br> </br>
 
         <input type="contraseña" name="pass" placeholder="Ingrese su contraseña" required class="box">
         <br> </br>
 
-        <button type="submit" class="btn-estilo"> Ingresar </button>
+        <button type="submit" name="btningresar" class="btn-estilo"> Ingresar </button>
         <br> </br>
 
-        <P> No tienes una cuenta? <a href="register.php"> registrate ahora! </a></P>
+        <P> No tienes una cuenta? <a href="register.php"> Registrate ahora! </a></P>
     </form>
 </div>
     
