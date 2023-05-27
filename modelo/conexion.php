@@ -1,10 +1,10 @@
 <?php
 class CConexion {
     public static function ConexionBD() {
-        $host = "";
-        $dbname = "";
-        $username="";
-        $password="";
+        $host = "b7wh7en78fhwxbtfds8b-postgresql.services.clever-cloud.com";
+        $dbname = "b7wh7en78fhwxbtfds8b";
+        $username="uqwv3xwcxq45cskcb1xy";
+        $password="8G7wBLZqK1tIq84xELRiVIzNsdcNxL";
 
         try{
             //$conexion=new PDO("postgre:host=$servidor;dbname=album", $usuario, $contrasenia);
@@ -19,10 +19,9 @@ class CConexion {
     }
 
 
-    public static function BusquedaBD($sql) {
+    public static function buscarBD($sql) {
         $conexion = self::ConexionBD();
         if($conexion != null) {
-            $conexion->exec($sql);
             $sentencia = $conexion->prepare($sql);
             $sentencia->execute();
             $resultado = $sentencia->fetchAll();
@@ -30,6 +29,17 @@ class CConexion {
         }
         else {
             return null;
+        }
+    }
+
+    public static function insertarBD($sql) {
+        $conexion = self::ConexionBD();
+        if($conexion != null) {
+            $conexion->exec($sql);
+            return 1;
+        }
+        else {
+            return 0;
         }
     }
 

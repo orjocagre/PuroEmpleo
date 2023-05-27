@@ -1,13 +1,3 @@
-<?php
-include_once "busquedaLogica.php";
-
-$busquedaLogica = new CBusquedaLogica();
-$ofertas = $busquedaLogica->buscarOfertas();
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,8 +5,8 @@ $ofertas = $busquedaLogica->buscarOfertas();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PuroEmpleo</title>
-    <link rel="stylesheet" href="./assets/css/busqueda.css">
-    <link rel="stylesheet" href="./assets/css/busqueda-laptop.css" media="(min-width: 1024px)">
+    <link rel="stylesheet" href="../assets/css/busqueda.css">
+    <link rel="stylesheet" href="../assets/css/busqueda-laptop.css" media="(min-width: 1024px)">
 
 </head>
 <body>
@@ -24,14 +14,14 @@ $ofertas = $busquedaLogica->buscarOfertas();
         <div class="container__header">
             <div class="logo">
                 <a href="#">
-                  <img src="assets/img/logo/tabacologo.png" alt="">
+                  <img src="../assets/img/logo/tabacologo.png" alt="">
                 </a>
              </div>
              <div class="menu">
                 <i class="fa-solid fa-bars" id="btn_menu"></i>
                 <div id="back_menu"></div>
                 <nav id="nav">
-                    <img src="/assets/img/logo/tabacologo.png" alt="">
+                    <img src="../assets/img/logo/tabacologo.png" alt="">
     
                     <ul>
                         
@@ -51,15 +41,37 @@ $ofertas = $busquedaLogica->buscarOfertas();
        
     
     </header>
+    <div class="contenedor_barra">
+        <div class="barreda_de_busqueda">
+            
+            <div class="cargo">
+                <i class="fa-solid fa-briefcase iconos_busquedas " ></i>
+                <input type="text" class="buscar_tcargo" placeholder="Cargo o puesto">
+            </div>
+
+            <div class="lugar">
+                <i class="fa-solid fa-location-dot iconos_busquedas"></i>
+                <input type="text" class="buscar_lugar" placeholder="Lugar">
+            </div>
+
+            <a href="" class="boton">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+
+        </div>  
+        
+    </div>
     <main>
+
+
         <div class="contenedor-ofertas">
             <?php
-            if($ofertas != null)
-            foreach($ofertas as $oferta) {
+            if($datosOferta != null)
+            foreach($datosOferta as $oferta) {
                 echo(
                     '
-                    <article>
-                        <img class="img-fabrica" src="./assets/icons/aganorsa.jpg" alt="">
+                    <article idOferta="'.$oferta['id'].'" puesto="'.$oferta['puesto'].'" fabrica="'.$oferta['fabrica'].'" ubicacion="'.'Br. Oscar Arnulfo Romero'.'" fecha="'.$oferta['fecha'].'" horario="'.$oferta['horario'].'" salario="'.$oferta['salario'].'" prestaciones="'.$oferta['prestaciones'].'" descripcion="'.$oferta['descripcion'].'">
+                        <img class="img-fabrica" src="../assets/icons/aganorsa.jpg" alt="">
                         <div class="contenedor-informacion">
                             <p class="puesto">'.$oferta['puesto'].'</p>
                             <p class="fabrica-aganorsa">'.$oferta['fabrica'].'</p>
@@ -72,6 +84,8 @@ $ofertas = $busquedaLogica->buscarOfertas();
             }
             ?>
         </div>
+
+        
         <div class="contenedor-descripcion">
             <section class="encabezado">
                 <h1>Bonchero</h1>
@@ -104,8 +118,18 @@ $ofertas = $busquedaLogica->buscarOfertas();
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum cupiditate nesciunt illo animi debitis tempore libero, voluptates molestiae ad totam corporis, eaque a. Animi sunt, corrupti fuga earum esse quaerat fugit molestias dolore ab inventore nam quas, reiciendis autem praesentium perspiciatis dolores officiis dolorum aliquid eveniet magnam maxime! Cupiditate facere quos molestias deserunt commodi totam possimus, quod cumque, accusamus enim optio iusto vitae reprehenderit velit impedit ipsam eaque accusantium. Necessitatibus alias, reprehenderit dolor, maxime animi dignissimos repudiandae ratione, ipsum ipsa suscipit quisquam expedita officia quis eum neque fugiat ad! Non alias eligendi atque odit nesciunt consequuntur quod voluptates rerum saepe quae dolore aut magnam, fuga est veniam accusamus possimus iure dolorem vero iste odio cum ratione ipsam ab. Est error totam quaerat numquam ea quas expedita, accusamus quam libero ipsam nemo eius, itaque maiores ut aliquid dolorum doloribus iure doloremque.</p>
             </section>
         </div>
+        <div class="contenedor-info">
+            <div class="circulog"></div>
+            <div class="cuadrado"></div>
+            <div class="circulop"></div>
+            <div class="texto">
+                <p>Somos la bolsa de empleo de Estelí, creamos PuroEmpleo con el fin de conectar a los mejores candidatos con las mejores oportunidades laborares en el sector del tabaco, ayudamos a las empresas a encontrar al profesional que encaje mejor con sus necesidades.</p>
+            </div>
+
+        </div>
+
     </main>
     <footer></footer>
-    <script src="./assets/js/busqueda.js"></script>
+    <script src="../assets/js/busqueda.js"></script>
 </body>
 </html>
