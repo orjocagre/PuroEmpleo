@@ -1,3 +1,100 @@
+:root{
+    --color_text-primario:#E5841A;
+    --color_text_secundario:#5D7C29;
+    --color_text_terciario:#1F2B0B;
+    --color_text_cuaternario:#643604;
+    --color_text_quinto:beige;;
+        
+}
+
+
+/*----------------------------contenedor barra de busqueda------------------------------------------*/
+
+
+.contenedor_barra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+.barreda_de_busqueda{
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 80%;
+    width: 80%;
+    border-color:var(--color_text_secundario);
+    border-style:outset;
+    height: 80px;
+    border-radius: 60px;
+}
+.lugar{
+    width: calc((100%-40px)/2);
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    padding: 10px;
+    height: 60px;
+    display: inline-block;
+    border-radius: 40px; 
+    background-color:#17f3170e;
+}
+.buscar_lugar{
+    border: none;
+    background: none;
+    outline: none;
+    color: black;
+    font-size: 20px;
+    line-height: 60px;
+    border-radius: 50px; 
+}
+
+.boton{
+    width: 40px;
+    color: var(--color_text_cuaternario);
+    height: 40px;
+    font-size: 30px;
+    align-items: flex-start;
+}
+.iconos_busquedas{
+    width: 40px;
+    color: var(--color_text_cuaternario);
+    height: 40px;
+    font-size: 30px;
+    align-items: flex-start;
+}
+.buscar_tcargo{
+    border: none;
+    background: none;
+    outline: none;
+    color: black;
+    font-size: 20px;
+    line-height: 60px;
+    border-radius: 50px;
+}
+.cargo{
+    width: calc((100%-40px)/2);
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    background: #03aa030e;
+    padding: 10px;
+    height: 60px;
+    border-radius: 40px;  
+}
+
+
+
+
+
+
+
+/*---------------------------------------------------------------------------------------------------*/
+
+
+
 header {
     display: block;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -12,12 +109,27 @@ main {
 }
 .contenedor-descripcion {
     width: 60%;
-    display: block;
+    display: none;/*block*/
+    animation-duration: 0.2s;
+}
+.click-oferta {
+    animation-name: cambioOferta;
+}
+@keyframes cambioOferta {
+    0% {transform: translateX(0px);}
+    50% {transform: translateX(10px);}
+    100% {transform: translateX(0px);}
 }
 article {
     padding: 2%;
     flex-direction: row;
     align-items: center;
+    z-index: 2;
+    transition-duration: 0.2s;
+}
+.seleccionado {
+    background: linear-gradient(90deg, white, var(--color_text_quinto));
+    color: var(--color_text-primario);
 }
 .img-fabrica {
     width: 180px;
@@ -25,6 +137,7 @@ article {
 }
 article:hover {
     transform: scale(1.025);
+    border-bottom-color: transparent;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -44,4 +157,59 @@ article:hover {
     padding-right: 100px;
     flex-direction: row;
     justify-content: space-between;
+}
+
+
+/*----------------------contenedor info-----------------------------*/
+
+.contenedor-info {
+    position: relative;
+    display: block;
+    width: 50%;
+    padding: 5% 5% 5% 15%;
+    margin-left: 5%;
+}
+.contenedor-info .texto {
+    z-index: 4;
+    position: absolute;
+    width: 60%;
+    padding-top: 5%;
+}
+.contenedor-info p {
+    font-size: 24px;
+    text-align: justify;
+    color: var(--color_text_cuaternario);
+}
+.contenedor-info .circulog {
+    z-index: 3;
+    left: 120px;
+    top: 40px;
+    position: absolute;
+    background-color: var(--color_text_secundario);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.contenedor-info .circulop {
+    z-index: 1;
+    position: absolute;
+    left: 55%;
+    top: 235px;
+    background-color: transparent;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: var(--color_text-primario);
+    border: 20px solid var(--color_text-primario);
+}
+.contenedor-info .cuadrado {
+    z-index: 2;
+    left: 20%;
+    position: absolute;
+    transform: rotate(10deg);
+    background-color: var(--color_text_quinto);
+    width: 50%;
+    height: 360px;
+
 }
