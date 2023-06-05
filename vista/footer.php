@@ -1,10 +1,12 @@
-</main>
-   <footer>
+<head>
+
+    <link rel="stylesheet" href="../assets/css/header_footer.css">
+</head>
+<footer>
       <div class="container__footer">
         <div class="box__footer">
             <div class="logo_footer">
-                <img src="/assets/img/logo/tabacologo.png" alt="">
-     
+                <img src="../assets/img/logo/tabacologo.png" alt="">
             </div>
             <div class="acerca_de">
                 <p>Somos la bolsa de empleo del Diamante la Segovia, acercandote a tus mejores oportunidades en el sector del tabaco</p>
@@ -34,7 +36,3 @@
       </div>
 
    </footer>
-     
-     <script src="/assets/js/script.js?ver=1.0"></script>
-</body>
-</html>

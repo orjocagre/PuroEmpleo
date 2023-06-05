@@ -7,38 +7,11 @@
     <title>Perfil Fabrica</title>
 
     <script src="https://kit.fontawesome.com/a9c2562c5e.js?ver=1.0" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/assets/css/perfil_fabrica.css">
+    <link rel="stylesheet" href="../assets/css/perfil_fabrica.css">
 </head>
 <body>
-<!--CREACIÓN DE HEADER Y MENU-->
-<header>
-    <div class="container__header">
-        <div class="logo">
-            <a href="#">
-              <img src="/assets/img/logo/tabacologo.png" alt="">
-            </a>
-        </div>
 
-        <div class="menu">
-            <!--CREACION DE MENU RESPONSIVE-->
-            <i class="fa-solid fa-bars" id="btn_menu"></i>
-            <div id="back_menu"></div>
-            <!--CREACION DE MENU RESPONSIVE-->
-            <nav id="nav">
-                <img src="/assets/img/logo/tabacologo.png" alt="">
-
-                <ul>
-                    
-                    <li><a href="/puroempleoinfo.html">Quienes somos</a></li>
-                    <li><a href="#">Contactos</a></li>
-                    
-                    <li><a href="#" class="btn__inicio">Inicia Sesión</a></li>
-                    <li><a href="#" class="btn__registro">Registrate</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>  
-</header>
+    <?php include("./header.php");?>
 <main>
     
 
@@ -48,7 +21,7 @@
         <div class="info_fabrica">
 
             <SEction class="logo_fabrica">
-                <img src="/assets/img/logo/oliva.jpg" alt="">
+                <img src="../assets/img/logo/oliva.jpg" alt="">
             </SEction>
             <section class="texto_perfil">
                 <h1>OLIVA</h1>
@@ -137,41 +110,11 @@
    
 
 </main>
-<!--CREACIÓN FOOTER-->
+<!--CREACIÓN FOOTER--> 
+    <?php include("./footer.php");?>
 
-<footer>
-    <div class="container__footer">
-      <div class="box__footer">
-          <div class="logo_footer">
-              <img src="/assets/img/logo/tabacologo.png" alt="">
-   
-          </div>
-          <div class="acerca_de">
-              <p>Somos la bolsa de empleo del Diamante la Segovia, acercandote a tus mejores oportunidades en el sector del tabaco</p>
 
-          </div>
-
-      </div>
-      <div class="box__footer">
-       
-          <a href="#"><i class="fa-brands fa-square-facebook"></i>Facebook</a>
-          
-      </div>
-      <div class="box__footer">
-          <a href="#"><i class="fa-brands fa-square-whatsapp"></i>WhatsApp</a>
-      </div>
-
-      <div class="box__footer">
-          <a href="#"><i class="fa-brands fa-square-instagram"></i>Instagram</a>
-      </div>
-    </div>
-    <div class="box_copyrigt">
-      <hr>
-          <p>Todos los derechos reservados © 2023 
-              <b b >PuroEmpleo </b></p>
-    </div>
-
- </footer>
+ 
     <script src="/assets/js/script.js?ver=1.0"></script>
 </body>
 </html>
