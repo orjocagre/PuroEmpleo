@@ -37,6 +37,6 @@
 
 </main>
     <?php include("./footer.php");?>
-    <script src="/assets/js/script.js?ver=1.0"></script>
+    <script src="../assets/js/script.js?ver=1.0"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@
             <div id="back_menu"></div>
 
             <nav id="nav">
-                <img src="../img/logo/tabacologo.png" alt="">
+                <img src="../assets/img/logo/tabacologo.png" alt="">
 
                 <ul> 
                     
