@@ -7,51 +7,52 @@
     <title>PuroEmpleo</title>
     <link rel="stylesheet" href="../assets/css/busqueda.css">
     <link rel="stylesheet" href="../assets/css/busqueda-laptop.css" media="(min-width: 1024px)">
+    <link rel="stylesheet" href="../assets/css/header_footer.css">
+    <script src="https://kit.fontawesome.com/a9c2562c5e.js?ver=1.0" crossorigin="anonymous"></script>
+
+
 
 </head>
 <body>
-    <header>
-        <div class="container__header">
-            <div class="logo">
-                <a href="#">
-                  <img src="../assets/img/logo/tabacologo.png" alt="">
-                </a>
-             </div>
-             <div class="menu">
-                <i class="fa-solid fa-bars" id="btn_menu"></i>
-                <div id="back_menu"></div>
-                <nav id="nav">
-                    <img src="../assets/img/logo/tabacologo.png" alt="">
-    
-                    <ul>
-                        
-                        <li><a href="#">Quienes somos</a></li>
-                        <li><a href="#">Contactos</a></li>
-                        
-                        <li><a href="#" class="btn__inicio">Inicia Sesión</a></li>
-                        <li><a href="#" class="btn__registro">Registrate</a></li>
-                    </ul>
-                </nav>
-                
-               
-                
-             </div>
-        </div>
-    
-       
-    
-    </header>
+    <?php include("../vista/header.php");?>
+
     <div class="contenedor_barra">
         <div class="barreda_de_busqueda">
             
             <div class="cargo">
                 <i class="fa-solid fa-briefcase iconos_busquedas " ></i>
                 <input type="text" class="buscar_tcargo" placeholder="Cargo o puesto">
+                <!-- bandeja de opciones -->
+                <div class="bandeja_opciones bandeja_puesto">
+                <?php
+                if($datosPuesto != null)
+                foreach($datosPuesto as $puesto) {
+                    echo ('<button class="opciones_puesto">'.$puesto['nombre'].'</button>');
+                }
+                ?>
+                </div>
+        
+                <!-- fin bandeja de opciones -->
             </div>
 
             <div class="lugar">
                 <i class="fa-solid fa-location-dot iconos_busquedas"></i>
                 <input type="text" class="buscar_lugar" placeholder="Lugar">
+                <!-- bandeja de opciones -->
+                <div class="bandeja_opciones bandeja_lugar">
+                <?php
+                if($datosMunicipio != null)
+                foreach($datosMunicipio as $municipio) {
+                    echo ('<button class="opciones_lugar">'.$municipio['nombre'].'</button>');
+                }
+                if($datosBarrio != null)
+                foreach($datosBarrio as $barrio) {
+                    echo ('<button class="opciones_lugar opciones_barrio">'.$barrio['nombre'].' - '.$barrio['municipio'].'</button>');
+                }
+                ?>
+                </div>
+        
+                <!-- fin bandeja de opciones -->
             </div>
 
             <a href="" class="boton">
@@ -120,16 +121,18 @@
         </div>
         <div class="contenedor-info">
             <div class="circulog"></div>
-            <div class="cuadrado"></div>
-            <div class="circulop"></div>
-            <div class="texto">
-                <p>Somos la bolsa de empleo de Estelí, creamos PuroEmpleo con el fin de conectar a los mejores candidatos con las mejores oportunidades laborares en el sector del tabaco, ayudamos a las empresas a encontrar al profesional que encaje mejor con sus necesidades.</p>
+            <div class="cuadrado">
+                <div class="texto">
+                    <p>Somos la bolsa de empleo de Estelí, creamos PuroEmpleo con el fin de conectar a los mejores candidatos con las mejores oportunidades laborares en el sector del tabaco, ayudamos a las empresas a encontrar al profesional que encaje mejor con sus necesidades.</p>
+                </div>
+
             </div>
+            <div class="circulop"></div>
 
         </div>
 
     </main>
-    <footer></footer>
+    <?php include("../vista/footer.php");?>
     <script src="../assets/js/busqueda.js"></script>
 </body>
 </html>
