@@ -15,12 +15,22 @@ const txt_lugar = document.querySelector('.buscar_lugar');
 const txt_puesto = document.querySelector('.buscar_tcargo');
 const bandeja_lugar = document.querySelector('.bandeja_lugar');
 const bandeja_puesto = document.querySelector('.bandeja_puesto');
+const opciones_puesto = document.querySelectorAll('.opciones_puesto');
+const opciones_lugar = document.querySelectorAll('.opciones_lugar');
+
 let seleccionado = null;
 
 let scrollActual = 0;
 
 article_oferta.forEach(function(article) {
     article.addEventListener('click', click_article_oferta);
+})
+
+opciones_puesto.forEach(function(button) {
+    button.addEventListener('click', click_opcion_puesto);
+})
+opciones_lugar.forEach(function(button) {
+    button.addEventListener('click', click_opcion_lugar);
 })
 
 txt_lugar.addEventListener('focus',desplegarOpcionesLugar);
@@ -36,7 +46,7 @@ function click_article_oferta(event) {
     seleccionado = event.currentTarget;  
     puesto.innerHTML = seleccionado.attributes.puesto.value;
     fabrica.innerHTML = seleccionado.attributes.fabrica.value;
-    ubicacion.innerHTML = '<span></span> '+seleccionado.attributes.ubicacion.value;
+    ubicacion.innerHTML = '<span></span> '+seleccionado.attributes.direccion.value+', '+seleccionado.attributes.barrio.value+', '+seleccionado.attributes.municipio.value;
     horario.innerHTML = '<span></span> '+seleccionado.attributes.horario.value;
     fecha.innerHTML = '<span></span> Publicado el '+seleccionado.attributes.fecha.value;
     salario.innerHTML = 'C$ '+parseFloat(seleccionado.attributes.salario.value).toLocaleString('en-US');
@@ -96,4 +106,15 @@ function desplegarOpcionesLugar() {
 function ocultarOpcionesLugar() {
     bandeja_lugar.style.opacity = '0';
     setTimeout(()=>{ bandeja_lugar.style.display = 'none';},200);
+}
+
+function click_opcion_puesto(event) {
+
+    seleccionado = event.currentTarget;  
+    txt_puesto.value = seleccionado.innerHTML;
+}
+function click_opcion_lugar(event) {
+
+    seleccionado = event.currentTarget;  
+    txt_lugar.value = seleccionado.innerHTML;
 }

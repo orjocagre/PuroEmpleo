@@ -31,7 +31,7 @@
 }
 .lugar{
     position: relative;
-    width: calc((100%-40px)/2);
+    width: calc((100% - 40px)/2);
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -48,11 +48,15 @@
     font-size: 20px;
     line-height: 60px;
     border-radius: 50px; 
+    width: calc(100% - 50px);
 }
 
 .boton{
     width: 40px;
     color: var(--color_text_cuaternario);
+    border: none;
+    background: none;
+    cursor: pointer;
     height: 40px;
     font-size: 30px;
     align-items: flex-start;
@@ -72,10 +76,11 @@
     font-size: 20px;
     line-height: 60px;
     border-radius: 50px;
+    width: calc(100% - 50px);
 }
 .cargo{
     position: relative;
-    width: calc((100%-40px)/2);
+    width: calc((100% - 40px)/2);
     display: inline-block;
     justify-content: center;
     align-items: center;
@@ -103,6 +108,7 @@ main {
     display: flex;
     flex-direction: row;
     padding: 50px 60px 0 60px;
+    min-height: 75vh;
 }
 .contenedor-ofertas {
     width: 40%;
@@ -154,9 +160,11 @@ article:hover {
     font-size: 25px;
 }
 .contenedor-descripcion .info-general {
-    padding-right: 100px;
     flex-direction: row;
     justify-content: space-between;
+}
+.info-general .ubicacion{
+    width: 50%;
 }
 
 
@@ -220,17 +228,37 @@ article:hover {
 
 
 .bandeja_opciones {
+    overflow: auto;
     z-index: 5;
     top: 65px;
     position: absolute;
-    border-radius: 5px;
+    border-radius: 20px;
     display: none;
     max-height: 400px;
-    overflow-y: scroll;
     opacity: 1;
     transition-duration: 0.2s;
     border: 2px solid rgb(245, 245, 245);
+    box-shadow: rgb(93, 93, 93) 0px 7px 29px 0px;
     background-color: white;
+}
+.bandeja_opciones::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.bandeja_opciones::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+.bandeja_opciones::-webkit-scrollbar-button:increment,.bandeja_opciones::-webkit-scrollbar-button {
+    display: none;
+} 
+.bandeja_opciones::-webkit-scrollbar-thumb {
+    background-color: #ababab;
+    border-radius: 20px;
+}
+.bandeja_opciones::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+.bandeja_lugar {
+    overflow-y: auto;
 }
 .opciones_lugar, .opciones_puesto {
     border: none;
@@ -243,8 +271,7 @@ article:hover {
     background-color: white;
 }
 .opciones_lugar:hover, .opciones_puesto:hover {
-    background-color: var(--color_text-primario);
-    color: var(--color_text_quinto);
+    background-color: var(--color_text_quinto);
     
 }
 .bandeja_lugar :nth-child(1 of .opciones_barrio) {

@@ -1,3 +1,12 @@
+<?php
+require_once("../controlador/busqueda_controlador.php");
+
+if($_POST)
+$controlador = new Busqueda_Controlador($_POST['puesto'],$_POST['lugar']);
+else
+$controlador = new Busqueda_Controlador("","");
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,17 +26,17 @@
     <?php include("../vista/header.php");?>
 
     <div class="contenedor_barra">
-        <div class="barreda_de_busqueda">
+        <form class="barreda_de_busqueda" action="../vista/busqueda_vista.php" method="post">
             
             <div class="cargo">
                 <i class="fa-solid fa-briefcase iconos_busquedas " ></i>
-                <input type="text" class="buscar_tcargo" placeholder="Cargo o puesto">
+                <input type="text" class="buscar_tcargo" placeholder="Cargo o puesto" name="puesto" autocomplete="off">
                 <!-- bandeja de opciones -->
                 <div class="bandeja_opciones bandeja_puesto">
                 <?php
-                if($datosPuesto != null)
-                foreach($datosPuesto as $puesto) {
-                    echo ('<button class="opciones_puesto">'.$puesto['nombre'].'</button>');
+                if($controlador->datosPuesto != null)
+                foreach($controlador->datosPuesto as $puesto) {
+                    echo ('<button type="button" class="opciones_puesto">'.$puesto['nombre'].'</button>');
                 }
                 ?>
                 </div>
@@ -37,17 +46,17 @@
 
             <div class="lugar">
                 <i class="fa-solid fa-location-dot iconos_busquedas"></i>
-                <input type="text" class="buscar_lugar" placeholder="Lugar">
+                <input type="text" class="buscar_lugar" placeholder="Lugar" name="lugar" autocomplete="off">
                 <!-- bandeja de opciones -->
                 <div class="bandeja_opciones bandeja_lugar">
                 <?php
-                if($datosMunicipio != null)
-                foreach($datosMunicipio as $municipio) {
-                    echo ('<button class="opciones_lugar">'.$municipio['nombre'].'</button>');
+                if($controlador->datosMunicipio != null)
+                foreach($controlador->datosMunicipio as $municipio) {
+                    echo ('<button type="button" class="opciones_lugar">'.$municipio['nombre'].'</button>');
                 }
-                if($datosBarrio != null)
-                foreach($datosBarrio as $barrio) {
-                    echo ('<button class="opciones_lugar opciones_barrio">'.$barrio['nombre'].' - '.$barrio['municipio'].'</button>');
+                if($controlador->datosBarrio != null)
+                foreach($controlador->datosBarrio as $barrio) {
+                    echo ('<button type="button" class="opciones_lugar opciones_barrio">'.$barrio['nombre'].' - '.$barrio['municipio'].'</button>');
                 }
                 ?>
                 </div>
@@ -55,11 +64,10 @@
                 <!-- fin bandeja de opciones -->
             </div>
 
-            <a href="" class="boton">
+            <button class="boton" type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
-
-        </div>  
+            </button>
+        </form>  
         
     </div>
     <main>
@@ -67,23 +75,26 @@
 
         <div class="contenedor-ofertas">
             <?php
-            if($datosOferta != null)
-            foreach($datosOferta as $oferta) {
+            if($controlador->datosOferta != null)
+            foreach($controlador->datosOferta as $oferta) {
                 echo(
                     '
-                    <article idOferta="'.$oferta['id'].'" puesto="'.$oferta['puesto'].'" fabrica="'.$oferta['fabrica'].'" ubicacion="'.'Br. Oscar Arnulfo Romero'.'" fecha="'.$oferta['fecha'].'" horario="'.$oferta['horario'].'" salario="'.$oferta['salario'].'" prestaciones="'.$oferta['prestaciones'].'" descripcion="'.$oferta['descripcion'].'">
+                    <article idOferta="'.$oferta['id'].'" puesto="'.$oferta['puesto'].'" fabrica="'.$oferta['fabrica'].'" municipio="'.$oferta['municipio'].'" barrio="'.$oferta['barrio'].'" direccion="'.$oferta['direccion'].'" fecha="'.$oferta['fecha'].'" horario="'.$oferta['horario'].'" salario="'.$oferta['salario'].'" prestaciones="'.$oferta['prestaciones'].'" descripcion="'.$oferta['descripcion'].'">
                         <img class="img-fabrica" src="../assets/icons/aganorsa.jpg" alt="">
                         <div class="contenedor-informacion">
                             <p class="puesto">'.$oferta['puesto'].'</p>
                             <p class="fabrica-aganorsa">'.$oferta['fabrica'].'</p>
-                            <p class="ubicacion"><span></span> Br. Oscar Arnulfo Romero</p>
+                            <p class="ubicacion"><span></span> Br. '.$oferta['barrio'].' - '.$oferta['municipio'].'</p>
                             <p class="fecha"><span></span> Publicado el '.$oferta['fecha'].'</p>
                         </div>
                     </article>
                     '
                 );
             }
+            if(count($controlador->datosOferta) == 0)
+            echo('<div class="sin-resultados"><p>No hay ofertas disponibles</p></div>');
             ?>
+            
         </div>
 
         
