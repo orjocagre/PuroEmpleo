@@ -66,7 +66,7 @@ width: 100%;
     border-radius: 60px;
 }
 .lugar{
-    width: calc((100%-40px)/2);
+    width: calc((100% - 40px)/2);
     justify-content: center;
     align-items: center;
     top: 50%;
@@ -112,7 +112,7 @@ width: 100%;
     width: calc(100% - 50px);
 }
 .cargo{
-    width: calc((100%-40px)/2);
+    width: calc((100% - 40px)/2);
     display: inline-block;
     justify-content: center;
     align-items: center;
