@@ -35,23 +35,50 @@
             </div>
         </div>
         <div class="contenedor_barra">
-            <div class="barreda_de_busqueda">
+            <form class="barreda_de_busqueda" action="../vista/busqueda_vista.php" method="post">
                 
                 <div class="cargo">
                     <i class="fa-solid fa-briefcase iconos_busquedas " ></i>
-                    <input type="text" class="buscar_tcargo" placeholder="Cargo o puesto">
+                    <input type="text" class="buscar_tcargo" placeholder="Cargo o puesto"  name="puesto" autocomplete="off">
                 </div>
+                <!-- bandeja de opciones -->
+                <div class="bandeja_opciones bandeja_puesto">
+                <?php
+                if($controlador->datosPuesto != null)
+                foreach($controlador->datosPuesto as $puesto) {
+                    echo ('<button type="button" class="opciones_puesto">'.$puesto['nombre'].'</button>');
+                }
+                ?>
+                </div>
+        
+                <!-- fin bandeja de opciones -->
 
                 <div class="lugar">
                     <i class="fa-solid fa-location-dot iconos_busquedas"></i>
-                    <input type="text" class="buscar_lugar" placeholder="Lugar">
+                    <input type="text" class="buscar_lugar" placeholder="Lugar" name="lugar" autocomplete="off">
+                    <!-- bandeja de opciones -->
+                    <div class="bandeja_opciones bandeja_lugar">
+                    <?php
+                    if($controlador->datosMunicipio != null)
+                    foreach($controlador->datosMunicipio as $municipio) {
+                        echo ('<button type="button" class="opciones_lugar">'.$municipio['nombre'].'</button>');
+                    }
+                    if($controlador->datosBarrio != null)
+                    foreach($controlador->datosBarrio as $barrio) {
+                        echo ('<button type="button" class="opciones_lugar opciones_barrio">'.$barrio['nombre'].' - '.$barrio['municipio'].'</button>');
+                    }
+                    ?>
+                    </div>
+                    <!-- fin bandeja de opciones -->
+                    
+
                 </div>
 
-                <a href="" class="boton">
+                <button class="boton" type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                </a>
+                </button>
 
-            </div>  
+            </form>  
             
         </div>
         <div class="acceso_plataforma">

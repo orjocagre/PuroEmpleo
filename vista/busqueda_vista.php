@@ -1,8 +1,16 @@
 <?php
 require_once("../controlador/busqueda_controlador.php");
 
-if($_POST)
-$controlador = new Busqueda_Controlador($_POST['puesto'],$_POST['lugar']);
+if($_POST) {
+    $pos = strpos($_POST['lugar'],"-");
+    if ($pos != false) {
+        $lugart = substr($_POST['lugar'], 0, $pos - 1);
+        $controlador = new Busqueda_Controlador($_POST['puesto'],$lugart);
+    }
+    else {
+        $controlador = new Busqueda_Controlador($_POST['puesto'],$_POST['lugar']);
+    }
+}
 else
 $controlador = new Busqueda_Controlador("","");
 
@@ -15,7 +23,7 @@ $controlador = new Busqueda_Controlador("","");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PuroEmpleo</title>
     <link rel="stylesheet" href="../assets/css/busqueda.css">
-    <link rel="stylesheet" href="../assets/css/busqueda-laptop.css" media="(min-width: 1024px)">
+    <link rel="stylesheet" href="../assets/css/busqueda-telefono.css" media="(max-width: 1024px)">
     <link rel="stylesheet" href="../assets/css/header_footer.css">
     <script src="https://kit.fontawesome.com/a9c2562c5e.js?ver=1.0" crossorigin="anonymous"></script>
 
