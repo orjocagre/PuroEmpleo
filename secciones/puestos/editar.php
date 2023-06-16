@@ -26,24 +26,22 @@ if (isset($_GET["txtID"])) {
     $sentencia->execute();
     $registro=$sentencia->fetch(PDO::FETCH_LAZY);
     $nombredelpuesto=$registro["nombredelpuesto"];
+}
 
+  if ($_POST) {
+    //recoleccion de datos mediante post
+     $txtID=(isset($_POST["txtID"]))?$_POST["txtID"]:"";
+     $nombredelpuesto=(isset($_POST["nombredelpuesto"])?$_POST["nombredelpuesto"]:"");
 
-    if ($_POST) {
-        //recoleccion de datos mediante post
-         $txtID=(isset($_POST["txtID"]))?$_POST["txtID"]:"";
-         $nombredelpuesto=(isset($_POST["nombredelpuesto"])?$_POST["nombredelpuesto"]:"");
-
-         //prepara la insercion de los datos
-         $sentencia=$conexion->prepare("UPDATE puesto 
-         SET nombredelpuesto=:nombredelpuesto
-         WHERE id=:id");
-         //asignacion de valores que vienen de post(formukario)
-        $sentencia->bindParam(":nombredelpuesto",$nombredelpuesto);
-        $sentencia->bindParam(":id",$txtID);
-        $sentencia->execute();
-        header("Location:index.php");
-      }
-
+     //prepara la insercion de los datos
+     $sentencia=$conexion->prepare("UPDATE puesto 
+     SET nombredelpuesto=:nombredelpuesto
+     WHERE id=:id");
+     //asignacion de valores que vienen de post(formukario)
+    $sentencia->bindParam(":nombredelpuesto",$nombredelpuesto);
+    $sentencia->bindParam(":id",$txtID);
+    $sentencia->execute();
+    header("Location:index.php");
   }
 ?>
 

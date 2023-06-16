@@ -16,6 +16,30 @@
 </head>
 
 <body>
+<?php include("../../config.php");
+
+if($_POST){
+  //recoleccion de datos mediante post
+   $usuario=(isset($_POST["usuario"])?$_POST["usuario"]:"");
+   $password=(isset($_POST["password"])?$_POST["password"]:"");
+   $correo=(isset($_POST["correo"])?$_POST["correo"]:"");
+   //poner la fecha de creacion
+   
+   //preparar la inserccion de los datos
+   $sentencia=$conexion->prepare("INSERT INTO usuario(id,nombre_usuario,password,id_estado_usuario,correo)
+            VALUES (default, :nombre_usuario,:password,1,:correo)");
+            //            VALUES (default, :nombre_usuario,:password,1,:fecha_creacion,:correo");
+//valores que tienen uso de :variable  
+  $sentencia->bindParam(":nombre_usuario",$usuario);
+  $sentencia->bindParam(":password",$password);
+  //fecha de creacio
+  $sentencia->bindParam(":correo",$correo);
+
+  $sentencia->execute();
+  header("Location:index.php");
+}  
+?>
+
   <header>
   <?php include("../../vista/header.php"); ?>
 
@@ -33,19 +57,19 @@
         <form action="" method="post" enclype="multipart/form-data">
 
         <div class="mb-3">
-          <label for="usuario" class="form-label">nombre del usuario:</label>
+          <label for="usuario" class="form-label">Nombre del usuario:</label>
           <input type="text"
             class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Nombre del usuario">
         </div>
 
         <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
+          <label for="password" class="form-label">Contraseña</label>
           <input type="password"
-            class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="Escriba su contraseæa">
+            class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="Escriba su contraseña">
         </div>
 
         <div class="mb-3">
-          <label for="correo" class="form-label">correo:</label>
+          <label for="correo" class="form-label">Correo:</label>
           <input type="email"
             class="form-control" name="correo" id="correo" aria-describedby="helpId" placeholder="Ingrese su correo">
         </div>
