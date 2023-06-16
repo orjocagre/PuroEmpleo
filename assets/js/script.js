@@ -6,7 +6,7 @@ main=document.querySelector("main");
 
 
 function mostrar_menu(){
-    nav.style.right = "0px";
+    nav.style.right = "-0px";
     background_menu.style.display = "block";
 }
 
@@ -20,12 +20,22 @@ function ocultar_menu(){
 /*MOSTRAR AL DAR CLIC MENU EN PERFIL DE PERSONA */
 var clic = 1;
 
-function divLogin(){ 
+function divinfo(event){ 
+    console.log(event.currentTarget);
 
    if(clic==1){
 
    document.getElementById("caja").style.height = "125px";
    document.getElementById("texto_info").style.display="block";
+   /*var caja_empresa=document.getElementById("caja_empresa");
+   var caja_ofertas=document.getElementById("caja_ofertas"); 
+   
+   var caja_calificacion=document.getElementById("caja_calificacion");
+   if(event.currentTarget = document.querySelector(".btn__empresa")){
+     caja_empresa.style.height = "125px";
+     document.getElementById("texto_info").style.display="block";
+   }
+   */
 
    clic = clic + 1;
 

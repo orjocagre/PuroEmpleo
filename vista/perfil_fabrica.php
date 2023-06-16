@@ -20,9 +20,9 @@
         
         <div class="info_fabrica">
 
-            <SEction class="logo_fabrica">
+            <Section class="logo_fabrica">
                 <img src="../assets/img/logo/oliva.jpg" alt="">
-            </SEction>
+            </Section>
             <section class="texto_perfil">
                 <h1>OLIVA</h1>
                 <p>La familia Oliva es de origen cubano, con una historia que se remonta a 1866, 
@@ -32,21 +32,33 @@
             </section>
            
         </div>
-
+ 
           <!--CREACION DE MENU PARA EL PERFIL DE LA FABRICA
             VISTA POR EL USUARIO-->
         
            <div class="menu_perfil">
              <nav id="nav">
                 <ul>
-                    <li><a href="#" class="btn__empresa"  onclick="divLogin()">Información</a></li>
-                    <li><a href="#" class="btn__ofertas" onclick="divLogin()">Ofertas</a></li>
-                    <li><a href="#" class="btn__calificacion" onclick="divLogin()">calificación</a></li>
+                    <li><a href="#" class="btn__empresa"  onclick="divinfo(event)">Información</a></li>
+                    <li><a href="#" class="btn__ofertas" onclick="divinfo(event)">Ofertas</a></li>
+                    <li><a href="#" class="btn__calificacion" onclick="divinfo(event)">calificación</a></li>
                    </div>
-                        
-                   <div id="caja"><p id="texto_info" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae cum, 
+                   <!--<div id="caja_empresa"><p id="texto_info" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae cum, 
                     itaque ipsa quo consequatur omnis a magni adipisci quae beatae 
                     quibusdam aut voluptatem impedit, fuga sint! Explicabo, soluta. Temporibus, dicta.</p></div>
+
+                    <div id="caja_ofertas"><p id="texto_info" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae cum, 
+                    itaque ipsa quo consequatur omnis a magni adipisci quae beatae 
+                    quibusdam aut voluptatem impedit, fuga sint! Explicabo, soluta. Temporibus, dicta.</p></div>
+
+                    <div id="caja_calificacion"><p id="texto_info" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae cum, 
+                    itaque ipsa quo consequatur omnis a magni adipisci quae beatae 
+                    quibusdam aut voluptatem impedit, fuga sint! Explicabo, soluta. Temporibus, dicta.</p></div>-->
+                    
+                    <div id="caja"><p id="texto_info" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae cum, 
+                    itaque ipsa quo consequatur omnis a magni adipisci quae beatae 
+                    quibusdam aut voluptatem impedit, fuga sint! Explicabo, soluta. Temporibus, dicta.</p></div>
+
 
                 </ul>
             </nav>   
@@ -115,6 +127,6 @@
 
 
  
-    <script src="/assets/js/script.js?ver=1.0"></script>
+    <script src="../assets/js/script.js?ver=1.0"></script>
 </body>
 </html>

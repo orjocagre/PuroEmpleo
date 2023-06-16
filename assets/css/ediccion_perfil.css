@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --color_text-primario:#E5841A;
+    --color_text_secundario:#5D7C29;
+    --color_text_terciario:#1F2B0B;
+    --color_text_cuaternario:#643604;
+    --color_text_quinto:beige;;
+}
+.ediccion_perfil{
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    flex-wrap: wrap;
+    background: #c5ff6033; 
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    margin-top: 15px;
+
+}
+.contenedor_empresa{
+    display: flex;
+    align-items: center;
+}
+.foto_perfil{
+    /*background: #5D7C29;*/
+    height: 200px;
+    height: 150px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.info_perfil{
+    /*background: #643604;*/
+    width: 200px;
+    height: 30px;
+    border-radius: 50px;
+    margin-left: 10px;
+}
+.foto_perfil img{
+    height: 100px;
+    margin-top: 30px;
+    border-radius: 50px;
+}
+
+.info_perfil p{
+   font-weight: bold;
+    font-size: 25px;
+}
+.numero_empleados p{
+   font-size: 15px;
+   color: #121d02ad;
+   
+}
+.contenedor_botones{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.agregar_ofertas{
+    height: 50px;
+    width: 180px;
+    background:var(--color_text_secundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+.agregar_ofertas p{
+   
+   color: white;
+
+}
+.editar_perfil{
+    margin-top: 10px;
+    height: 30px;
+    width: 100px;
+    background:var(--color_text_quinto);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 10px;
+    border-radius: 50px;
+    margin-left: 70px;
+    border:2px solid #6436041c;
+    
+}
+.editar_perfil p{
+    font-weight: bold;
+    color: var(--color_text_terciario);
+ 
+}
+@media screen and (max-width:1080px) {
+    .agregar_ofertas{
+      height: 30px;
+      width: 170px;
+      margin-left: 35px;
+    }
+   .agregar_ofertas p{
+      font-size: 15px;
+   }
+   .editar_perfil{ 
+        margin-left: 0px;
+   }
+
+
+    
+
+
+
+
+
+}

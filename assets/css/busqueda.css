@@ -136,6 +136,15 @@ main {
     height: fit-content;
     display: block;
 }
+.sin-resultados {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sin-resultados p {
+    font-size: 34px;
+}
 article {
     background-color: white;
     font-size: 22px;
@@ -267,3 +276,5 @@ article span {
 .contenedor-info {
     display: none;
 }
+
+
