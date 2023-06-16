@@ -1,9 +1,9 @@
 <?php
 
-$servidor="localhost";
-$BaseDatos="PRUEBA2";
-$usuario="postgres";
-$password="root11";
+$servidor="b7wh7en78fhwxbtfds8b-postgresql.services.clever-cloud.com";
+$BaseDatos="b7wh7en78fhwxbtfds8b";
+$usuario="uqwv3xwcxq45cskcb1xy";
+$password="8G7wBLZqK1tIq84xELRiVIzNsdcNxL";
 
 //$conexion=pg_connect("host=localhost dbname=PRUEBA2 user=postgres password=root11");
 try {
