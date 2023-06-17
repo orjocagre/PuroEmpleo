@@ -109,7 +109,7 @@ $controlador = new Busqueda_Controlador("","");
         <div class="contenedor-descripcion">
             <section class="encabezado">
                 <h1>Bonchero</h1>
-                <h2>Fábrica Aganorsa</h2>
+                <h2><a href="./perfil_fabrica.php">Fábrica Aganorsa</a></h2>
                 <button class="btn-aplicar">Aplicar</button>
                 <button class="btn-guardar">Guardar en favoritos</button>
                 <button class="btn-cerrar"></button>

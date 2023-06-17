@@ -45,7 +45,7 @@ function click_article_oferta(event) {
     if(seleccionado != null) seleccionado.classList.remove("seleccionado");
     seleccionado = event.currentTarget;  
     puesto.innerHTML = seleccionado.attributes.puesto.value;
-    fabrica.innerHTML = seleccionado.attributes.fabrica.value;
+    fabrica.innerHTML = '<a href="./perfil_fabrica.php">'+seleccionado.attributes.fabrica.value+'</a>';
     ubicacion.innerHTML = '<span></span> '+seleccionado.attributes.direccion.value+', '+seleccionado.attributes.barrio.value+', '+seleccionado.attributes.municipio.value;
     horario.innerHTML = '<span></span> '+seleccionado.attributes.horario.value;
     fecha.innerHTML = '<span></span> Publicado el '+seleccionado.attributes.fecha.value;
