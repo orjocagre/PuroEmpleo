@@ -43,21 +43,23 @@
                     <li><a href="#" class="btn__ofertas" onclick="divinfo(event)">Ofertas</a></li>
                     <li><a href="#" class="btn__calificacion" onclick="divinfo(event)">calificación</a></li>
                    </div>
-                   <!--<div id="caja_empresa"><p id="texto_info" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae cum, 
-                    itaque ipsa quo consequatur omnis a magni adipisci quae beatae 
-                    quibusdam aut voluptatem impedit, fuga sint! Explicabo, soluta. Temporibus, dicta.</p></div>
+                   <div id="caja_empresa"><p id="texto_info" >HOLA MUNDO.</p></div>
 
-                    <div id="caja_ofertas"><p id="texto_info" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae cum, 
-                    itaque ipsa quo consequatur omnis a magni adipisci quae beatae 
-                    quibusdam aut voluptatem impedit, fuga sint! Explicabo, soluta. Temporibus, dicta.</p></div>
+                    <div id="caja_ofertas"><p id="texto_info" >HELLO WORLD</p></div>
 
-                    <div id="caja_calificacion"><p id="texto_info" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae cum, 
+                    <div id="caja_calificacion"><p id="texto_info" >Calificanos segun tu experiencia</p>
+                     <div class="clasificacion">
+                        <h3>Agregar Comentario</h3>
+                     </div>
+                        <a href="#" class="publicar_calificacion">
+                            <p>Publicar</p>
+                        </a>
+                        
+                    </div>
+                    
+                    <!--<div id="caja"><p id="texto_info" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae cum, 
                     itaque ipsa quo consequatur omnis a magni adipisci quae beatae 
                     quibusdam aut voluptatem impedit, fuga sint! Explicabo, soluta. Temporibus, dicta.</p></div>-->
-                    
-                    <div id="caja"><p id="texto_info" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae cum, 
-                    itaque ipsa quo consequatur omnis a magni adipisci quae beatae 
-                    quibusdam aut voluptatem impedit, fuga sint! Explicabo, soluta. Temporibus, dicta.</p></div>
 
 
                 </ul>

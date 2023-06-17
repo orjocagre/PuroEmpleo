@@ -67,8 +67,8 @@
     align-items: center;
 }
 .agregar_ofertas{
-    height: 50px;
-    width: 180px;
+    height: 30px;
+    width: 150px;
     background:var(--color_text_secundario);
     display: flex;
     align-items: center;
@@ -76,15 +76,36 @@
     border-radius: 50px;
     margin-right: 10px;
 }
-.agregar_ofertas p{
-   
+.agregar_ofertas i{
+    margin:5px;
    color: white;
-
+   font-size: 20px;
+}
+.agregar_ofertas p{   
+   color: white;
 }
 .editar_perfil{
     margin-top: 10px;
     height: 30px;
-    width: 100px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    border-radius: 50px;
+    margin-left: 20px;
+    
+}
+.editar_perfil i{
+    color: var(--color_text_terciario);
+   font-size: 20px;
+
+}
+
+.estadisticas{
+    margin-top: 10px;
+    height: 30px;
+    width: 150px;
     background:var(--color_text_quinto);
     display: flex;
     align-items: center;
@@ -93,13 +114,16 @@
     border-radius: 50px;
     margin-left: 70px;
     border:2px solid #6436041c;
-    
 }
-.editar_perfil p{
-    font-weight: bold;
-    color: var(--color_text_terciario);
- 
+.ofertas_publicadas{
+    height: 400px;
+    width: 100%;
+    background: #0e474e;
 }
+
+
+/*-PARTE DISEÑADA OJ*/
+
 @media screen and (max-width:1080px) {
     .agregar_ofertas{
       height: 30px;

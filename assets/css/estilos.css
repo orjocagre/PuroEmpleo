@@ -90,17 +90,17 @@ width: 100%;
 
 .boton{
     width: 40px;
-    color: var(--color_text_cuaternario);
     border: none;
     background: none;
     cursor: pointer;
+    color: var(--color_text_terciario);
     height: 40px;
     font-size: 30px;
     align-items: flex-start;
 }
 .iconos_busquedas{
     width: 40px;
-    color: var(--color_text_cuaternario);
+    color: var(--color_text_terciario);
     height: 40px;
     font-size: 30px;
     align-items: flex-start;
@@ -121,7 +121,8 @@ width: 100%;
     display: inline-block;
     justify-content: center;
     align-items: center;
-    background: #03aa030e;
+    top: 50%;
+    background: #17f3170e;;
     padding: 10px;
     height: 60px;
     border-radius: 40px;  
