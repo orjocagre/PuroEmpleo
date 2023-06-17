@@ -66,10 +66,10 @@ width: 100%;
     border-radius: 60px;
 }
 .lugar{
+    position: relative;
     width: calc((100% - 40px)/2);
     justify-content: center;
     align-items: center;
-    top: 50%;
     padding: 10px;
     height: 60px;
     display: inline-block;
@@ -89,14 +89,17 @@ width: 100%;
 
 .boton{
     width: 40px;
-    color: var(--color_text_cuaternario);
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--color_text_terciario);
     height: 40px;
     font-size: 30px;
     align-items: flex-start;
 }
 .iconos_busquedas{
     width: 40px;
-    color: var(--color_text_cuaternario);
+    color: var(--color_text_terciario);
     height: 40px;
     font-size: 30px;
     align-items: flex-start;
@@ -112,12 +115,12 @@ width: 100%;
     width: calc(100% - 50px);
 }
 .cargo{
+    position: relative;
     width: calc((100% - 40px)/2);
     display: inline-block;
     justify-content: center;
     align-items: center;
-    top: 50%;
-    background: #03aa030e;
+    background: #17f3170e;;
     padding: 10px;
     height: 60px;
     border-radius: 40px;  
@@ -154,6 +157,69 @@ width: 100%;
     background: var(--color_text-primario);
     
 }
+
+/*------------------------bandeja de opciones-----------------------------*/
+
+
+.bandeja_opciones {
+    overflow: auto;
+    z-index: 5;
+    top: 65px;
+    position: absolute;
+    border-radius: 20px;
+    display: none;
+    max-height: 400px;
+    opacity: 1;
+    transition-duration: 0.2s;
+    border: 2px solid rgb(245, 245, 245);
+    box-shadow: rgb(93, 93, 93) 0px 7px 29px 0px;
+    background-color: white;
+}
+.bandeja_opciones::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.bandeja_opciones::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+.bandeja_opciones::-webkit-scrollbar-button:increment,.bandeja_opciones::-webkit-scrollbar-button {
+    display: none;
+} 
+.bandeja_opciones::-webkit-scrollbar-thumb {
+    background-color: #ababab;
+    border-radius: 20px;
+}
+.bandeja_opciones::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+.bandeja_lugar {
+    overflow-y: auto;
+}
+.opciones_lugar, .opciones_puesto {
+    border: none;
+    height: 40px;
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+}
+.opciones_lugar:hover, .opciones_puesto:hover {
+    background-color: var(--color_text_quinto);
+    
+}
+.bandeja_lugar :nth-child(1 of .opciones_barrio) {
+    border-top: 2px solid var(--color_text-primario);
+}
+
+
+/*------------------------fin bandeja de opciones-----------------------------*/
+
+
+
+
+
+
 
 
 /*Responsive*/
