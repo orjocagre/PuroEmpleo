@@ -55,7 +55,7 @@ function divinfo(event){
      
    }
    else if(event.currentTarget == document.querySelector(".btn__calificacion")){
-     caja_calificacion.style.height = "125px";
+     caja_calificacion.style.height = "180px";
      caja_calificacion.style.display="flex";
      caja_ofertas.style.height = "0px";
      caja_ofertas.style.display="none";
