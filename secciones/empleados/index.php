@@ -15,6 +15,20 @@
 </head>
 
 <body>
+<?php include("../../config.php");
+
+
+
+$sentencia=$conexion->prepare("SELECT *,
+(SELECT nombredelpuesto 
+FROM puesto 
+WHERE puesto.id=empleado.id_puesto limit 1) as puesto
+FROM empleado");
+$sentencia->execute();
+$listar_empleados=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
   <header>
   <?php include("../../vista/header.php"); ?>
 
@@ -41,7 +55,10 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th scope="col"> ID </th>
                     <th scope="col">Nombre</th>
+                    <th scope="col">N° de cedula</th>
+                    <th scope="col">Edad</th>
                     <th scope="col">Foto</th>
                     <th scope="col">CV</th>
                     <th scope="col">Puesto</th>
@@ -50,18 +67,31 @@
                 </tr>
             </thead>
             <tbody>
+              <?php foreach($listar_empleados as $registro) {?>
+            
                 <tr class="">
-                    <td scope="row">R1C1</td>
-                    <td>R1C2</td>
-                    <td>R1C3</td>
-                    <td>R1C2</td>
-                    <td>R1C3</td>
+                    <td><?php echo $registro["id"]; ?></td>
+                    <td scope="row">
+                    <?php echo $registro["primernombre"]; ?>
+                    <?php echo $registro["segundonombre"]; ?>
+                    <?php echo $registro["primeapellido"]; ?>
+                    <?php echo $registro["segundoapellido"]; ?>
+                    </td>
+                    <td><?php echo $registro["cedula"]; ?></td>
+                    <td><?php echo $registro["edad"]; ?></td>
+
+                    <td><?php echo $registro["foto"]; ?></td>
+                    <td><?php echo $registro["cv"]; ?></td>
+                    <td><?php echo $registro["id_puesto"]; ?></td>
+                    <td><?php echo $registro["fecha_ingreso"]; ?></td>
                     <td>
                     <a name="" id="" class="btn btn-primary" href="#" role="button">Carta</a> 
                     |<a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
                     |<a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a> </td>
                 </tr>
-               
+
+                <?php } ?>
+
             </tbody>
         </table>
     </div>
