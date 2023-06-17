@@ -6,7 +6,6 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
-
 }  
 :root{
     --color_text-primario:#E5841A;
@@ -158,8 +157,6 @@
 .info_permanente section{
     display: flex;
 }
-
-
 /*Cambiar nombre*/
 
 #texto_info {
@@ -180,15 +177,26 @@
     margin-top: 10px;
     align-items: center;
     color:var(--color_text_cuaternario);
+
 }
 #caja_calificacion{
+    flex-wrap: wrap;
     flex-direction: row;
    justify-content: space-evenly;
+   align-content: flex-start;
   
 }
-.clasificacion h3{
+.comentario h3{
+    margin-top: 30px;
     color:var(--color_text_cuaternario);
     
+}
+.text_comentario{
+    margin-top: 10px;
+    width: 350px;
+    height:100px;
+    border-radius: 5px;
+    border: 2px solid var(--color_text_quinto);
 }
 .publicar_calificacion{
     height: 30px;
@@ -203,6 +211,43 @@
     box-shadow: rgba(68, 128, 86, 0.206) 0px 7px 29px 0px;
 }
 
+.puntuacion_empresa{
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+.p_estrellas{
+    color: #E5841A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+.contenedor_publicar{
+    display: none;
+}
+
+.perfil_f img{
+    margin: 10px;
+    width: 80px;
+    height:80px ;
+    border-radius: 45px;
+}
+.perfil_publicado{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+   
+}
+.perfil_estrellas{
+    color: #E5841A;
+}
+
+.mi_opinion{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+   
+}
 /*Responsive*/
 
 
