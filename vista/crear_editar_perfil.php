@@ -33,19 +33,28 @@
             </div>
             
             <div class="contenedor_botones">
-                <div class="agregar_ofertas">
-                    <p>AGREGAR OFERTAS</p>
-               </div>
+                <a href="#" class="agregar_ofertas">
 
-               <div class="editar_perfil">
+                     <i class="fa-solid fa-plus"></i>
+                    <p>Oferta</p>
+               </a>
+               <a href="#" class="estadisticas">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <p>Estadísticas</p>s  
+               </a>
+                <div class="editar_perfil">
                     <i class="fa-solid fa-pen"></i>
-                    <p>Editar</p>
+                    <p></p>
                </div>
+               
 
             </div>
 
           
         </div>
+        <section class="ofertas_publicadas">
+          <!--FALTA-->
+        </section>
 
 
        

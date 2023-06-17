@@ -52,8 +52,8 @@
  max-width: 1200px;
  border-radius: 100px;
  padding: 0px 20px;*/
- background: #ffffff;
-   max-width: 1200px;
+    background:#ffffff;
+    max-width: 1100px;
     height: 100%;
     margin: auto;
     display: flex;
@@ -88,19 +88,22 @@
 .btn__empresa{
     padding: 10px 50px;
     border-radius: 100px;
-    background-color:  var(--color_text-primario);
-    color: rgb(255, 255, 255);
+    background-color: var(--color_text_quinto);
     transition: all 300ms;
+    color: #1F2B0B;
+    font-weight: bold;
+    box-shadow: rgba(114, 150, 117, 0.2) 0px 7px 29px 0px;
 }
 .btn__empresa:hover{
-    background:rgb(207, 155, 76); 
+    background:var(--color_text-primario); 
 }
 .btn__ofertas {
     padding: 10px 90px; 
     border-radius: 100px;
-    background-color: var(--color_text_secundario);
-    color: rgb(255, 255, 255);
+    background-color: var(--color_text_quinto);
     transition: all 300ms;
+    font-weight: bold;
+    color: #1F2B0B;
 }
 .btn__ofertas:hover{
     background: rgb(86, 153, 86);
@@ -110,9 +113,10 @@
     padding: 10px 80px;
     width: 100px;
     border-radius: 100px;
-    background-color: var(--color_text-primario);
-    color: rgb(255, 255, 255);
+    background-color: var(--color_text_quinto);
     transition: all 300ms;
+    font-weight: bold;
+    color: #1F2B0B;
 }
 .btn__empresa:hover{
     background:rgb(207, 155, 76); 
@@ -157,34 +161,47 @@
 
 
 /*Cambiar nombre*/
-#caja{
 
-	width: 1200PX;
+#texto_info {
+    padding: 20px 20px;
+   text-align: justify;
+    color: var(--color_text_cuaternario);    
+}
 
+#caja_empresa,#caja_ofertas,#caja_calificacion{
+    display: none;
+    width: 1100PX;
 	margin: auto;
-
 	height: 0px;
-
 	background: #ffffff;
     border-radius: 25px;
-	/*box-shadow: 10px 10px 3px var(--color_text_secundario);*/
     box-shadow: rgba(68, 128, 86, 0.603) 0px 7px 29px 0px;
 	transition: height .4s;
     margin-top: 10px;
     align-items: center;
+    color:var(--color_text_cuaternario);
+}
+#caja_calificacion{
+    flex-direction: row;
+   justify-content: space-evenly;
+  
+}
+.clasificacion h3{
+    color:var(--color_text_cuaternario);
     
 }
-#texto_info {
-    padding: 20px 20px;
-   text-align: justify;
-    display: none;
-    color: var(--color_text_cuaternario);
-    
+.publicar_calificacion{
+    height: 30px;
+    width: 100px;
+    background:var(--color_text-primario);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    margin-right: 10px;
+    box-shadow: rgba(68, 128, 86, 0.206) 0px 7px 29px 0px;
 }
-
-
-
-
 
 /*Responsive*/
 
