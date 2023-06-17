@@ -1,3 +1,9 @@
+<?php
+require_once("../controlador/busqueda_controlador.php");
+$controlador = new Busqueda_Controlador("","");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,17 +46,19 @@
                 <div class="cargo">
                     <i class="fa-solid fa-briefcase iconos_busquedas " ></i>
                     <input type="text" class="buscar_tcargo" placeholder="Cargo o puesto"  name="puesto" autocomplete="off">
+                
+                    <!-- bandeja de opciones -->
+                
+                    <div class="bandeja_opciones bandeja_puesto">
+                        <?php
+                        if($controlador->datosPuesto != null)
+                        foreach($controlador->datosPuesto as $puesto) {
+                            echo ('<button type="button" class="opciones_puesto">'.$puesto['nombre'].'</button>');
+                        }
+                        ?>
+                    </div>
                 </div>
-                <!-- bandeja de opciones -->
-                <div class="bandeja_opciones bandeja_puesto">
-                <?php
-                if($controlador->datosPuesto != null)
-                foreach($controlador->datosPuesto as $puesto) {
-                    echo ('<button type="button" class="opciones_puesto">'.$puesto['nombre'].'</button>');
-                }
-                ?>
-                </div>
-        
+                    
                 <!-- fin bandeja de opciones -->
 
                 <div class="lugar">

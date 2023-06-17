@@ -5,7 +5,7 @@
     --color_text_secundario:#5D7C29;
     --color_text_terciario:#1F2B0B;
     --color_text_cuaternario:#643604;
-    --color_text_quinto:beige;;
+    --color_text_quinto:beige;
         
 }
 * {
@@ -207,6 +207,9 @@ article:hover {
 .encabezado h2 {
     font-size: 25px;
     margin-bottom: 30px;
+}
+.encabezado h2 a {
+    color: black;
 }
 .encabezado button {
     font-size: 25px;

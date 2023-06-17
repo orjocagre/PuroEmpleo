@@ -66,6 +66,7 @@ width: 100%;
     border-radius: 60px;
 }
 .lugar{
+    position: relative;
     width: calc((100% - 40px)/2);
     justify-content: center;
     align-items: center;
@@ -89,6 +90,9 @@ width: 100%;
 
 .boton{
     width: 40px;
+    border: none;
+    background: none;
+    cursor: pointer;
     color: var(--color_text_terciario);
     height: 40px;
     font-size: 30px;
@@ -112,6 +116,7 @@ width: 100%;
     width: calc(100% - 50px);
 }
 .cargo{
+    position: relative;
     width: calc((100% - 40px)/2);
     display: inline-block;
     justify-content: center;

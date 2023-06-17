@@ -18,7 +18,9 @@
 main {
     flex-direction: column;
     padding: 0px;
+    margin-top: 30px;
     min-height: 0px;
+    border-top: 2px solid rgb(194, 194, 194);
 }
 .contenedor-ofertas {
     width: 100%;
@@ -36,6 +38,7 @@ article {
     /* align-items: ?; */
     z-index: 0;
     transition-duration: 0s;
+
 }
 .seleccionado {
     background: white;
