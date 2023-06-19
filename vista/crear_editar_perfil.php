@@ -34,7 +34,7 @@
             
             <div class="contenedor_botones">
                 <a href="#" class="agregar_ofertas">
-
+                                    
                      <i class="fa-solid fa-plus"></i>
                     <p>Oferta</p>
                </a>
@@ -67,6 +67,7 @@
 
     </main>
     <?php include("./footer.php");?>
+    <script src="../assets/js/script.js"></script>
 
 </body>
 </html>

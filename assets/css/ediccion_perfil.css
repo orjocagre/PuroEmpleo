@@ -115,10 +115,11 @@
     margin-left: 70px;
     border:2px solid #6436041c;
 }
+/*Mostrar al entrar*/
 .ofertas_publicadas{
     height: 400px;
     width: 100%;
-    background: #0e474e;
+    background: #d0dfe1;
 }
 
 
