@@ -66,6 +66,9 @@ article:hover {
 .encabezado button {
     font-size: 18px;
 }
+.encabezado .btn-guardar {
+    margin-top: 10px;
+}
 .contenedor-descripcion .info-general {
     flex-direction: column;
     justify-content: baseline;

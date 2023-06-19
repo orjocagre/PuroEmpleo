@@ -115,15 +115,222 @@
     margin-left: 70px;
     border:2px solid #6436041c;
 }
+
+
+
+/*--------------------------------ofertas publicadas-------------------------------------------------------------*/
+
+
 /*Mostrar al entrar*/
-.ofertas_publicadas{
-    height: 400px;
+.ofertas_publicadas {
+    display: flex;
+    flex-direction: row;
+    padding: 50px 60px 0 60px;
+    min-height: 75vh;
+}
+.contenedor-ofertas {
+    height: fit-content;
+    display: block;
+    width: 40%;
+}
+.contenedor-descripcion {
+    width: 60%;
+    display: none;/*block*/
+    animation-duration: 0.2s;
+}
+.click-oferta {
+    animation-name: cambioOferta;
+}
+@keyframes cambioOferta {
+    0% {transform: translateX(0px);}
+    50% {transform: translateX(10px);}
+    100% {transform: translateX(0px);}
+}
+.sin-resultados {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sin-resultados p {
+    font-size: 34px;
+}
+article {
+    background-color: white;
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2%;
+    cursor: pointer;
+    border-bottom: 2px solid rgb(194, 194, 194);
+    z-index: 2;
+    transition-duration: 0.2s;
+}
+.seleccionado {
+    background: linear-gradient(90deg, white, var(--color_text_quinto));
+    color: var(--color_text-primario);
+}
+.img-fabrica {
+    background-color: rgb(248, 242, 242);
+    width: 180px;
+    height: auto;
+    margin-right: 20px;
+}
+article span {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*ubicacion  #266B14 https://www.flaticon.es/icono-gratis/mapa_3082383?term=ubicacion&page=1&position=6&origin=search&related_id=3082383*/
+}
+article:hover {
+    transform: scale(1.025);
+    border-bottom-color: transparent;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.ubicacion span {
+    background-image: url(../icons/ubicacion.png);
+}
+.fecha span {
+    background-image: url(../icons/reloj.png);
+}
+
+
+
+/*----------------------contenedor descripcion-----------------------------*/
+
+.contenedor-descripcion {
+    background-color: var(--color_text_quinto);
+    padding: 0 30px;
+    display: none;
+}
+.contenedor-descripcion section {
+    padding: 30px 0;
+    border-bottom: 2px solid black;
+}
+.encabezado {
+    padding-bottom: 15px;
+    position: relative;
+}
+.encabezado h1 {
+    font-size: 60px;
+    line-height: 45px;
+    color: var(--color_text_secundario);
+}
+.encabezado h2 {
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+.encabezado h2 a {
+    color: black;
+}
+.encabezado button {
+    font-size: 25px;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: var(--color_text-primario);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+.btn-aplicar:hover,
+.btn-guardar:hover {
+    background-color: var(--color_text_secundario);
+}
+.encabezado .btn-cerrar {
+    position: absolute;
+    right: 12px;
+    top: 42px;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding: 0;
+    background-color: transparent;
+    background-image: url(../icons/equis.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+.encabezado .btn-cerrar:hover {
+    transform: scale(1.4);
+}
+
+.contenedor-descripcion .info-general {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info-general {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 22px;
+}
+.info-general span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.info-general .ubicacion{
+    width: 50%;
+}
+.horario span {
+    background-image: url(../icons/sol.png);
+}
+.salario,
+.prestaciones,
+.descripcion
+{
+    font-size: 20px;
+}
+.salario div{
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+}
+.salario h3 {
+    margin-left: 40px;
+    color: var(--color_text-primario);
+    font-weight: 300;
+    font-size: 28px;
+}
+
+/*----------------------contenedor info-----------------------------*/
+
+.contenedor-info {
+    position: relative;
+    display: block;
+    width: 50%;
+    padding: 5% 5% 5% 15%;
+    margin-left: 5%;
+}
+.contenedor-info .cuadrado {
+    z-index: 2;
+    left: 20%;
+    position: absolute;
+    background-color: var(--color_text_quinto);
+    width: 70%;
+
+}
+.contenedor-info .texto {
+    z-index: 4; 
     width: 100%;
     background: #d0dfe1;
 }
 
 
-/*-PARTE DISEÑADA OJ*/
+
+
 
 @media screen and (max-width:1080px) {
     .agregar_ofertas{
@@ -138,6 +345,75 @@
         margin-left: 0px;
    }
 
+   /*--------------------------------ofertas publicadas-------------------------------------------------------------*/
+   
+   
+   .ofertas_publicadas {
+       flex-direction: column;
+       padding: 0px;
+       margin-top: 30px;
+       min-height: 0px;
+       border-top: 2px solid rgb(194, 194, 194);
+   }
+   .contenedor-ofertas {
+       width: 100%;
+   }
+   .contenedor-descripcion {
+       width: 100%;
+       animation: none;
+   }
+   .click-oferta {
+       animation: none;
+   }
+   article {
+       padding: 10%;
+       flex-direction: column;
+       /* align-items: ?; */
+       z-index: 0;
+       transition-duration: 0s;
+   
+   }
+   .seleccionado {
+       background: white;
+       color: black;
+   }
+   .img-fabrica {
+       width: 80vw;
+       margin-right: 0px;
+   }
+   article:hover {
+       transform: none;
+       border-bottom: 2px solid rgb(194, 194, 194);
+       box-shadow: none;
+   }
+   
+   /*----------------------contenedor descripcion-----------------------------*/
+   
+   
+   .encabezado h1 {
+       font-size: 45px;
+   }
+   .encabezado h2 {
+       font-size: 20px;
+   }
+   .encabezado button {
+       font-size: 18px;
+       margin-top: 20px;
+   }
+   .contenedor-descripcion .info-general {
+       flex-direction: column;
+       justify-content: baseline;
+   }
+   .info-general .ubicacion{
+       width: 100%;
+   }
+   
+   
+   /*----------------------contenedor info-----------------------------*/
+   
+   .contenedor-info {
+       display: none;
+   }
 
     
 

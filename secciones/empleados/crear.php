@@ -76,7 +76,7 @@
         <div class="mb-3">
           <label for="" class="form-label">CV(PDF):</label>
           <input type="text"
-            class="form-control" name="CV" id="CV" aria-describedby="helpId" placeholder="CV">
+            class="form-control" name="CV" id="CV" aria-describedby="helpId" placeholder="(opcional)">
         </div>
 
         <div class="mb-3">
