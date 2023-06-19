@@ -32,11 +32,10 @@ else{
         <div class="info_fabrica">
 
             <Section class="logo_fabrica">
-                <img src="../assets/img/logo/oliva.jpg" alt="">
+                <img src="../assets/img/logo/<?php echo $controlador->datosFabrica[0]['logo'];?>" alt="">
             </Section>
             <section class="texto_perfil">
                 <h1 class="nombre"><?php echo $controlador->datosFabrica[0]['nombre'];?></h1>
-                <p class="descripcion"><?php echo $controlador->datosFabrica[0]['descripcion'];?></p>
             </section>
            
         </div>
@@ -182,12 +181,12 @@ else{
             <div class="info_permanente">
                 <section class="tiempo_laboral">
                     <i class="fa-solid fa-business-time"></i>
-                    <p>Jornada ordinaria</p>
+                    <p><?php echo $controlador->datosFabrica[0]['jornada'];?></p>
                 </section>
                 
                 <section class="numero_empleados">
                     <i class="fa-solid fa-user"></i>
-                    <p>5340</p>
+                    <p><?php echo $controlador->datosFabrica[0]['empleados'];?></p>
                 </section>
     
                 <section class="direccion_empresa">

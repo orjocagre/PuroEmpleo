@@ -15,7 +15,7 @@
     --color_text_quinto:beige;;
 }
 .info_fabrica{
-    max-width: 1200px;
+    max-width: 1150px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -38,6 +38,7 @@
 }
 .info_fabrica h1{    
     color: var(--color_text_terciario);
+    font-size: 50px;
 }
 .texto_perfil{
     margin-left: 20px;
@@ -311,7 +312,6 @@ article {
     border-bottom: none;
 }
 .seleccionado {
-    background: linear-gradient(90deg, white, var(--color_text_quinto));
     color: var(--color_text-primario);
 }
 .img-fabrica {
@@ -330,9 +330,7 @@ article span {
     /*ubicacion  #266B14 https://www.flaticon.es/icono-gratis/mapa_3082383?term=ubicacion&page=1&position=6&origin=search&related_id=3082383*/
 }
 article:hover {
-    transform: scale(1.025);
-    border-bottom-color: transparent;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: var(--color_text_quinto);
 }
 .ubicacion span {
     background-image: url(../icons/ubicacion.png);
@@ -580,10 +578,6 @@ article:hover {
     }
     .info_fabrica{
         align-items:flex-start;
-    }
-    .info_fabrica{
-        
-
     }
     .logo_fabrica img{
         border-radius: 150px;
