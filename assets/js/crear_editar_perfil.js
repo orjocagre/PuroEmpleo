@@ -60,7 +60,7 @@ function click_btn_cerrar() {
     if(window.matchMedia('(min-width: 1024px)').matches) {
         seleccionado.classList.remove("seleccionado");
         contenedor_descripcion.style.display = 'none';
-        contenedor_info.style.display = 'block';
+        contenedor_info.style.display = 'flex';
     }
     else {
         contenedor_descripcion.style.display = 'none';

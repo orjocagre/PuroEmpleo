@@ -120,20 +120,22 @@
 
 /*--------------------------------ofertas publicadas-------------------------------------------------------------*/
 
-
 .ofertas_publicadas {
+    margin: 0 auto;
+    justify-self: center;
     display: flex;
     flex-direction: row;
-    padding: 50px 60px 0 60px;
+    padding: 50px 0px 0 0px;
     min-height: 75vh;
+    max-width: 1200px;
 }
 .contenedor-ofertas {
     height: fit-content;
     display: block;
-    width: 40%;
+    width: 30%;
 }
 .contenedor-descripcion {
-    width: 60%;
+    width: 70%;
     display: none;/*block*/
     animation-duration: 0.2s;
 }
@@ -308,21 +310,17 @@ article:hover {
 
 .contenedor-info {
     position: relative;
-    display: block;
-    width: 50%;
-    padding: 5% 5% 5% 15%;
-    margin-left: 5%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
 }
 .contenedor-info .cuadrado {
-    z-index: 2;
-    left: 20%;
-    position: absolute;
     background-color: var(--color_text_quinto);
     width: 70%;
-
+    height: fit-content;
+    margin-top: 50px;
 }
 .contenedor-info .texto {
-    z-index: 4; 
     width: 100%;
     height: 100%;
     padding: 10%;
@@ -333,33 +331,6 @@ article:hover {
     text-align: justify;
     color: var(--color_text_cuaternario);
 }
-.contenedor-info .circulog {
-    z-index: 3;
-    left: 130px;
-    top: 0px;
-    position: absolute;
-    background-color: var(--color_text_secundario);
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-}
-
-.contenedor-info .circulop {
-    z-index: 1;
-    position: absolute;
-    left: 70%;
-    top: 235px;
-    background-color: transparent;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background-color: var(--color_text-primario);
-    border: 20px solid var(--color_text-primario);
-}
-
-
-
-
 
 @media screen and (max-width:1080px) {
     .agregar_ofertas{
