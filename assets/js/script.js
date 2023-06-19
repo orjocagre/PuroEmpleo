@@ -43,7 +43,6 @@ function divinfo(event){
      caja_ofertas.style.display="none";
      caja_calificacion.style.height = "0px";
      caja_calificacion.style.display="none";
-     alert("PROTAGONISTA");
    }
    else if(event.currentTarget == document.querySelector(".btn__ofertas")){
      caja_ofertas.style.height = "125px";

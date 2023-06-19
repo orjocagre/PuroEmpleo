@@ -120,6 +120,8 @@
 
 /*--------------------------------ofertas publicadas-------------------------------------------------------------*/
 
+
+/*Mostrar al entrar*/
 .ofertas_publicadas {
     margin: 0 auto;
     justify-self: center;
@@ -324,13 +326,18 @@ article:hover {
     width: 100%;
     height: 100%;
     padding: 10%;
-
+    background: #d0dfe1;
 }
 .contenedor-info p {
     font-size: 24px;
     text-align: justify;
     color: var(--color_text_cuaternario);
 }
+
+
+
+
+
 
 @media screen and (max-width:1080px) {
     .agregar_ofertas{

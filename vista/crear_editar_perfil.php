@@ -51,7 +51,7 @@ $controlador = new Busqueda_Controlador("","");
             
             <div class="contenedor_botones">
                 <a href="#" class="agregar_ofertas">
-
+                                    
                      <i class="fa-solid fa-plus"></i>
                     <p>Oferta</p>
                </a>
@@ -150,6 +150,7 @@ $controlador = new Busqueda_Controlador("","");
     <?php include("./footer.php");?>
     <script src="../assets/js/crear_editar_perfil.js"></script>
 
+    <script src="../assets/js/script.js"></script>
 
 </body>
 </html>
