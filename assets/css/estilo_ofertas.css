@@ -15,12 +15,86 @@
 }
 .contenedor_oferta{
     max-width: 1200px;
-    margin: auto;
     display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
     align-items: center;
     padding: 20px 20px;
-    background: rgba(213, 136, 136, 0.717);
     height: 100%;
+    margin-bottom: 20px;
     margin-top: 10px;
     border-radius: 10px;    
+    box-shadow: 5px 5px var(--color_text-primario), 
+    10px 10px var(--color_text_cuaternario), 
+    15px 15px var(--color_text_secundario);
+    background: var(--color_text_quinto);
+}
+section img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+.contenedor_oferta label,h1{
+    color: var(--color_text_terciario);
+    font-size:20px ;
+}
+.agregar_nueva{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-between;
+}
+.informacion_empresa{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+select{
+    outline: 0px;
+    background: var(--color_text_quinto);
+    color: var(--color_text_terciario);
+    border: 1px solid var(--color_text_cuaternario);
+    padding: 4px;
+    border-radius: 9px;
+    margin-left: 10px;
+    font-weight: bold;
+
+}
+input{
+    border: none;
+    background: none;
+    color: black;
+    border: none;
+    outline: 0px;
+   margin-left:10px;
+    border-bottom: 2px solid grey;
+}
+textarea{
+    height: 30px;
+
+    background: none;
+   
+    border-color:2px solid grey;
+}
+
+.agregar_puesto,.ingresar_salario,.ingresar_descripcion,
+.ingresar_experiencia,.agregar_area,.ingresar_barrio,.ingresar_Municipios
+,.ingresar_fecha{
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    
+}
+button{
+    background-color: var(--color_text_secundario);
+    border-radius: 10px;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 50%;
 }

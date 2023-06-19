@@ -12,22 +12,95 @@
 <?php include("./header.php");?>
 
     <main>
-        <div class="contenedor_oferta">
+        
+        
+       
+        <form class="contenedor_oferta" id="frm">
+            <Section>
+                <h1><center>OLIVA</center></h1>
+                <img src="../assets/img/logo/oliva.jpg" alt="">
+            </Section>
+            
+            
             <div class="agregar_nueva">
-                <h2>Agregar una nueva oferta</h2>
-                <h3>Puesto</h3>
-                <h3>Salario</h3>
-                <h3>Descripcion del puesto</h3>
-                <h3>Experiencia</h3>
-                <h3>Area</h3>
+                <h3>Agregar una nueva oferta</h3>
+                <div class="agregar_puesto">
+                    <label>Puesto:</label>
+                    <!--AGREGAR PHP-->
+                    <select name="select">
+                        <option value="value1">Bonchero</option>
+                        <option value="value2" selected>Rolero</option>
+                        <option value="value3">Pre Industria</option>
+                    </select>     
+                    
+                    </div>
+                    <!--AGREGAR PHP INGRESAR PUESTO-->
+                    <div class="ingresar_descripcion">
+                        <label>Descripcion del puesto:</label>
+                        <input type="text">
+                    </div>
+                    <!--AGREGAR PHP INGRESAR SALARIO-->
+                    <div class="ingresar_salario">
+                        <label>Salario:</label>
+                        <input type="text">
+                    </div>
+                    <!--AGREGAR PHP INGRESAR Ingresar Experiencia-->
+                    <div class="ingresar_experiencia">
+
+                        <label>Prestaciones:</label>
+                        <input type="text">
+                    </div>
+                    
+
                 
-            </div>
-            <div>
-               
-        </div>
+                </div>
+                    
+                <div class="informacion_empresa">
+                    <h3>Datos de la Empresa</h3>
+                
+                    <!--AGREGAR PHP INGRESAR Ingresar Dirrección-->
+                    <div class="agregar_area">
+                        <label>Dirección:</label>
+                        <input type="text">
+                    </div>
+                    <!--AGREGAR PHP INGRESAR Ingresar Agregar Barrio-->
+                    <div class="ingresar_barrio">
+                        <label>Seleccionar Barrio:</label>
+                        <select name="select">
+                            <option value="value1">Omar Torrijos</option>
+                            <option value="value2" selected>Oscar Gamez</option>
+                            <option value="value3">Rosario</option>
+                        </select>  
+                    </div>
+                    <!--AGREGAR PHP INGRESAR Ingresar Agregar Barrio-->
+                    <div class="ingresar_Municipios">
+                        <label>Seleccionar Municipio:</label>
+                        <select name="select">
+                            <option value="value1">Estelí</option>
+                            <option value="value2" selected>Condega</option>
+                            <option value="value3">La Trinidad</option>
+                        </select>  
+                    </div>
+                    <!--AGREGAR PHP INGRESAR Ingresar Ingresar Barrio-->
+                    <div class="ingresar_fecha">
+                        <form method="post" action="/send/">
+                           <label>Selecciona la fecha deseada:</label> 
+                            <input type="date" value="2024-02-25">
+                        </form>
+                    </div>
+                    <div class="ingresar_horario">
+                       <label>Jornada Laboral</label>
+                       <input type="text">
+                    </div>
+                </div>  
+                <button class="btn_agregar" type="submit" form="frm">Agregar Oferta</button>
+            
+            </div>    
+            
+        </form>
 
     </main>
-<?php include("./footer.php");?>
-    
+    <?php include("./footer.php");?>
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>
