@@ -152,7 +152,7 @@ article {
     transition-duration: 0.2s;
 }
 .seleccionado {
-    background: linear-gradient(90deg, white, var(--color_text_quinto));
+    background: linear-gradient(90deg, white 30%, var(--color_text_quinto));
     color: var(--color_text-primario);
 }
 .img-fabrica {
