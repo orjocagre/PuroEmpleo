@@ -50,7 +50,7 @@ $controlador = new Busqueda_Controlador("","");
             </div>
             
             <div class="contenedor_botones">
-                <a href="#" class="agregar_ofertas">
+                <a href="./agregar_oferta.php" class="agregar_ofertas">
                                     
                      <i class="fa-solid fa-plus"></i>
                     <p>Oferta</p>
