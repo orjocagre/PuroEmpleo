@@ -33,8 +33,8 @@ function divinfo(event) {
 
     }
     else if (event.currentTarget == document.querySelector(".btn__calificacion")) {
-        caja_calificacion.style.height = "180px";
-        caja_calificacion.style.display = "flex";
+        caja_calificacion.style.height = "fit-content";
+        caja_calificacion.style.display = "block";
         caja_ofertas.style.height = "0px";
         caja_ofertas.style.display = "none";
         caja_empresa.style.height = "0px";
