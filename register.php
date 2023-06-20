@@ -1,26 +1,25 @@
 <?php
 
-include 'cofinx.php';
+include 'config.php';
 
 if(isset($_POST['submit'])){
 
-   $name = mysqli_real_escape_string($conn, $_POST['user']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = mysqli_real_escape_string($conn, md5($_POST['pass']));
-   $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassw']));
-   $user_type = $_POST['user_type'];
+   $name = ($conexion, $_POST['nombre_usuario']);
+   $email = ($conexion, $_POST['correo']);
+   $pass = ($conexion, md5($_POST['pass']));
+   $cpass = ($conexion, md5($_POST['cpassw']));
 
-   $select_users = mysqli_query($conn, "SELECT * FROM `usuarios` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+   $select_users = ($conexion, "SELECT * FROM usuario WHERE correo = '$email' AND password = '$pass'");
 
-   if(mysqli_num_rows($select_users) > 0){
-      $message[] = 'este usuario ya existe!';
+   if(pg_num_rows($select_users) > 0){
+      $message[] = "este usuario ya existe!";
    }else{
       if($pass != $cpass){
-         $message[] = 'confirmacion de contraseña no es la misma!';
+         $message[] = "confirmacion de contraseña no es la misma!";
       }else{
-         mysqli_query($conn, "INSERT INTO `users`(user, email, password, user_type) VALUES('$user', '$email', '$cpass', '$user_type')") or die('query failed');
-         $message[] = 'registro exitosó!';
-         header('location:login.php');
+         pg_query($conexion, "INSERT INTO usuario(nombre_usuario, password, correo) VALUES('$user', '$cpass', '$email'");
+         $message[] = "registro exitosó";
+         header("Location:index.php");
       }
    }
 
@@ -43,6 +42,18 @@ if(isset($_POST['submit'])){
 <link rel="stylesheet" href="stylesN.css">
 
 <body>
+<?php
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
 
 <div class="form-container">
 
@@ -58,16 +69,10 @@ if(isset($_POST['submit'])){
 
         <input type="contraseæa" name="cpassword" placeholder="Confirme su contraseña" required class="box">
 
-        <select name="user_type">
 
-        <option value="user">user</option>
-
-        <option value="admin">admin</option>
-
-        </select>
         <input type="submit" name="submit" value="registrarse" class="btn">
 
-        <P> ya tienes una cuenta? <a href="login.php"> Inicia Seccion! </a></P>
+        <P> ya tienes una cuenta? <a href="login.php"> Inicia Sesion! </a></P>
     </form>
 </div>
     

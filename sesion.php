@@ -1,17 +1,34 @@
 <?php
-require 'config.php';
+include ("config.php");
 session_start();
-$usuario=$_POST['user'];
-$clave=$_POST['pass'];
 
-$query="SELECT * FROM usuario WHERE nombre_usuario='$usuario' AND contrasegna='$clave'";
-$consulta=pg_query($conexion,$query);
-$cantidad=pg_num_rows($consulta);
-if($cantidad>0){
-    $_SESSION['nombre_usuario']=$usuario;
-    header("location:ingreso.php");
- }else{
-    echo "Datos incorrectos!";
- }
+if($_POST){
+   $usuario=(isset($_POST["usuario"])?$_POST["usuario"]:"");
+   $password=(isset($_POST["password"])?$_POST["password"]:"");
 
+//$query="SELECT * FROM usuario WHERE nombre_usuario='$usuario' AND password='$clave'";
+//seleccionar registros
+$sentencia=$conexion->prepare("SELECT *, count(*) as n_usuario 
+         FROM usuario
+         WHERE nombre_usuario=:usuario
+         AND password=:password
+         ");
+   //asignacion de valores que vienen de post(formukario)
+  $sentencia->bindParam(":nombre_usuario",$usuario);
+  $sentencia->bindParam(":password",$password);
+  $sentencia->execute();
+
+  $lista_usuarios=$sentencia->fetch(PDO::FETCH_LAZY);
+  //$cantidad=['n_usuario'];
+
+if($lista_usuarios['n_usuario']>0){
+   
+   $_SESSION['usuario']=$lista_usuarios['usuario'];
+   $_SESSION['logueado']=true;
+   header("Location:ingreso.php");
+}else{
+   $mensaje="Error: El usuario o contraseña son incorrectos!";
+}
+
+}
 ?>
