@@ -15,7 +15,7 @@
     --color_text_quinto:beige;;
 }
 .info_fabrica{
-    max-width: 1200px;
+    max-width: 1150px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -38,6 +38,7 @@
 }
 .info_fabrica h1{    
     color: var(--color_text_terciario);
+    font-size: 50px;
 }
 .texto_perfil{
     margin-left: 20px;
@@ -186,6 +187,9 @@
    align-content: flex-start;
   
 }
+#caja_ofertas {
+    overflow: hidden;
+}
 .comentario h3{
     margin-top: 30px;
     color:var(--color_text_cuaternario);
@@ -248,6 +252,237 @@
     flex-direction: column;
    
 }
+
+
+
+
+/*--------------------------------ofertas publicadas-------------------------------------------------------------*/
+
+
+/*Mostrar al entrar*/
+.ofertas_publicadas {
+    margin: 0 auto;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    min-height: 25vh;
+    max-width: 1200px;
+}
+.contenedor-ofertas {
+    height: fit-content;
+    display: block;
+    width: 30%;
+}
+.contenedor-descripcion {
+    width: 70%;
+    display: none;/*block*/
+    animation-duration: 0.2s;
+}
+.click-oferta {
+    animation-name: cambioOferta;
+}
+@keyframes cambioOferta {
+    0% {transform: translateX(0px);}
+    50% {transform: translateX(10px);}
+    100% {transform: translateX(0px);}
+}
+.sin-resultados {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sin-resultados p {
+    font-size: 34px;
+}
+article {
+    background-color: white;
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2%;
+    cursor: pointer;
+    border-bottom: 2px solid rgb(194, 194, 194);
+    z-index: 2;
+    transition-duration: 0.2s;
+}
+.contenedor-ofertas :last-child {
+    border-bottom: none;
+}
+.seleccionado {
+    color: var(--color_text-primario);
+}
+.img-fabrica {
+    background-color: rgb(248, 242, 242);
+    width: 180px;
+    height: auto;
+    margin-right: 20px;
+}
+article span {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*ubicacion  #266B14 https://www.flaticon.es/icono-gratis/mapa_3082383?term=ubicacion&page=1&position=6&origin=search&related_id=3082383*/
+}
+article:hover {
+    background-color: var(--color_text_quinto);
+}
+.ubicacion span {
+    background-image: url(../icons/ubicacion.png);
+}
+.fecha span {
+    background-image: url(../icons/reloj.png);
+}
+
+
+
+/*----------------------contenedor descripcion-----------------------------*/
+
+.contenedor-descripcion {
+    background-color: var(--color_text_quinto);
+    padding: 0 30px;
+    display: none;
+    border-left: 2px solid rgb(194, 194, 194);
+}
+.contenedor-descripcion section {
+    padding: 30px 0;
+    border-bottom: 2px solid black;
+}
+.contenedor-descripcion :last-child {
+    border-bottom: none;
+}
+.encabezado {
+    padding-bottom: 15px;
+    position: relative;
+}
+.encabezado h1 {
+    font-size: 60px;
+    line-height: 45px;
+    color: var(--color_text_secundario);
+}
+.encabezado h2 {
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+.encabezado h2 a {
+    color: black;
+}
+.encabezado button {
+    font-size: 25px;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: var(--color_text-primario);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+.btn-aplicar:hover,
+.btn-guardar:hover {
+    background-color: var(--color_text_secundario);
+}
+.encabezado .btn-cerrar {
+    position: absolute;
+    right: 12px;
+    top: 42px;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding: 0;
+    background-color: transparent;
+    background-image: url(../icons/equis.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+.encabezado .btn-cerrar:hover {
+    transform: scale(1.4);
+}
+
+.contenedor-descripcion .info-general {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info-general {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 22px;
+}
+.info-general span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.info-general .ubicacion{
+    width: 50%;
+}
+.horario span {
+    background-image: url(../icons/sol.png);
+}
+.salario,
+.prestaciones,
+.descripcion
+{
+    font-size: 20px;
+}
+.salario div{
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+}
+.salario h3 {
+    margin-left: 40px;
+    color: var(--color_text-primario);
+    font-weight: 300;
+    font-size: 28px;
+}
+
+/*----------------------contenedor info-----------------------------*/
+
+.contenedor-info {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color_text_quinto);
+    border-left: 2px solid rgb(194, 194, 194);
+}
+.contenedor-info .cuadrado {
+    width: 60%;
+    height: fit-content;
+}
+.contenedor-info .texto {
+    width: 100%;
+    height: 100%;
+    padding: 10%;
+}
+.contenedor-info p {
+    font-size: 24px;
+    text-align: justify;
+    color: var(--color_text_cuaternario);
+}
+
+
+
+
+
+
+
+
+
 /*Responsive*/
 
 
@@ -287,16 +522,12 @@
        transition: all 300ms;
     }
     .text__portada{
-        
         padding-right: 0px;
-        
     }
     .text__portada p{
         font-size: 20px;
         font-weight: normal;
         text-align: justify;
-
-        
     }
     .imagen_portada{
         display: none;
@@ -307,17 +538,16 @@
    
     }
     .menu ul li{
-          margin-top: 30px;
+         margin-top: 30px;
     }
 
     .menu nav ul li a{
         color: var(--color_text_secundario);
-        
-
     }
     .menu nav img{
         display: block;
         width: 200px;
+        margin: auto;
     }
 
     #back_menu{
@@ -342,44 +572,123 @@
         transition: all 300ms;
         
     }
-
     .menu #btn_menu:hover{
 
         background:rgb(255, 255, 255,0.2) ;
     }
-    
-    .barreda_de_busqueda{
-       height:auto;
-        flex-direction: column;
-        border: none;
-        width: 100vw;
-        margin-top: 10px;
+    .info_fabrica{
+        align-items:flex-start;
     }
-    .boton{
-        margin-top: 20px;
-    }
-    .cargo{
-        width: 90%;
-        border-bottom-left-radius: 0px;    
-        border-bottom-right-radius: 0px; 
-        margin-bottom: 2px;
+    .logo_fabrica img{
+        border-radius: 150px;
+        width: 60px;
+        height: 60px;
         
     }
-    .buscar_tcargo{
-        width: 80%;
+    .menu_perfil{
+         /*align-items:center ;
+         background-color: aqua;
+         max-width: 1200px;
+         border-radius: 100px;
+         padding: 0px 20px;*/
+           background:#ffffff;
+           max-width: 100;
+           height: 100%;
+           margin: 5px;
+           align-items: center;
+           padding: 0px 20px;
+           border-radius: 100px;
+          
+           box-shadow: rgba(125, 150, 155, 0.2) 0px 7px 29px 0px;
     }
-    .buscar_lugar{
-       
-        width: 80%;
+    .btn__empresa,.btn__ofertas,.btn__calificacion {
+        padding: 10px 5px;
     }
-    .lugar{
-        width: 90%;
-        border-top-left-radius: 0px;    
-        border-top-right-radius: 0px; 
-
-
+    #caja_empresa,#caja_ofertas,#caja_calificacion{
+        display: none;
+        width: 100%;
+        height: 100%;
+        margin: auto;
     }
-
+    .menu_perfil nav{
+        margin: 0px 0px;
+    }
+    .menu_perfil nav ul li{
+        list-style: none;
+        margin: 20px 20px;
+        
+    }
    
- 
+    /*--------------------------------ofertas publicadas-------------------------------------------------------------*/
+   
+   
+   .ofertas_publicadas {
+    flex-direction: column;
+    padding: 0px;
+    margin-top: 30px;
+    min-height: 0px;
+    border-top: 2px solid rgb(194, 194, 194);
+    }
+    
+    .contenedor-ofertas {
+        width: 100%;
+    }
+    .contenedor-descripcion {
+        width: 100%;
+        animation: none;
+    }
+    .click-oferta {
+        animation: none;
+    }
+    article {
+        padding: 10%;
+        flex-direction: column;
+        /* align-items: ?; */
+        z-index: 0;
+        transition-duration: 0s;
+    
+    }
+    .seleccionado {
+        background: white;
+        color: black;
+    }
+    .img-fabrica {
+        width: 80vw;
+        margin-right: 0px;
+    }
+    article:hover {
+        transform: none;
+        border-bottom: 2px solid rgb(194, 194, 194);
+        box-shadow: none;
+    }
+    
+    /*----------------------contenedor descripcion-----------------------------*/
+    
+    
+    .encabezado h1 {
+        font-size: 45px;
+    }
+    .encabezado h2 {
+        font-size: 20px;
+    }
+    .encabezado button {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .contenedor-descripcion .info-general {
+        flex-direction: column;
+        justify-content: baseline;
+    }
+    .info-general .ubicacion{
+        width: 100%;
+    }
+    
+    
+    /*----------------------contenedor info-----------------------------*/
+    
+    .contenedor-info {
+        display: none;
+    }
+    /*----------------------fin contenedor info-----------------------------*/
+
 }

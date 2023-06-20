@@ -20,7 +20,7 @@
                 <ul> 
                     
                     <li><a href="./puroempleoinfo.php">Quienes somos</a></li>
-                    <li><a href="#">Contactos</a></li>
+                    <li><a href="./cotactanos.php">Contactanos</a></li>
                     
                     <li><a href="/login.php" class="btn__inicio">Inicia Sesión</a></li>
                     <li><a href="/register.php" class="btn__registro">Registrate</a></li>

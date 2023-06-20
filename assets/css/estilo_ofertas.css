@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --color_text-primario:#E5841A;
+    --color_text_secundario:#5D7C29;
+    --color_text_terciario:#1F2B0B;
+    --color_text_cuaternario:#643604;
+    --color_text_quinto:beige;;
+}
+.contenedor_oferta{
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+   
+    padding: 20px 20px;
+    height:fit-content;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 10px;    
+    box-shadow: 5px 5px var(--color_text-primario), 
+    10px 10px var(--color_text_cuaternario), 
+    15px 15px var(--color_text_secundario);
+    background: var(--color_text_quinto);
+}
+section img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+.contenedor_oferta label,h1{
+    color: var(--color_text_terciario);
+    font-size:20px ;
+}
+.agregar_nueva{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+.guardar_informacion{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: space-between;
+   
+}
+.informacion_empresa{
+    
+    align-self: flex-start;
+    margin: auto;
+   
+}
+select{
+    outline: 0px;
+    background: var(--color_text_quinto);
+    color: var(--color_text_terciario);
+    border: 1px solid var(--color_text_cuaternario);
+    padding: 4px;
+    border-radius: 9px;
+    margin-left: 10px;
+    font-weight: bold;
+
+}
+input{
+    border: none;
+    background: none;
+    color: black;
+    border: none;
+    outline: 0px;
+   margin-left:10px;
+    border-bottom: 2px solid grey;
+}
+textarea{
+    height: 200px;
+    width: 300px;
+    background: none;
+    outline: 0px;
+    border-bottom: 2px solid grey;
+}
+.ingresar_prestaciones,.ingresar_descripcion{
+    display: flex;
+    flex-direction: column;
+   margin-bottom: 20px;
+   margin-top: 20px;
+
+}
+
+.agregar_puesto,.ingresar_salario,
+.ingresar_experiencia,.agregar_area,
+.ingresar_barrio,.ingresar_Municipios
+,.ingresar_fecha{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    
+}
+.fondo img{
+    width: 400px;
+    height: 300px;
+}
+button{
+    background-color: var(--color_text_secundario);
+    border-radius: 10px;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 160px;
+   
+    margin-left: 60%;
+
+}
