@@ -17,13 +17,29 @@
 <body>
 <?php include("../../config.php");
 
-
-
-$sentencia=$conexion->prepare("SELECT *,
-(SELECT nombredelpuesto 
-FROM puesto 
-WHERE puesto.id=empleado.id_puesto limit 1) as puesto
-FROM empleado");
+$sentencia=$conexion->prepare("SELECT
+empleado.id,
+empleado.id_persona,
+persona.primernombre,
+persona.segundonombre,
+persona.primerapellido,
+persona.segundoapellido,
+persona.cedula,
+persona.edad,
+empleado.id_curiculum,
+empleado.id_usuario,
+empleado.foto,
+empleado.cv,
+puesto.nombredelpuesto,
+empleado.fecha_ingreso
+FROM
+empleado,
+puesto,
+persona
+WHERE
+empleado.id_puesto = puesto.id AND
+empleado.id_persona = persona.id_persona
+");
 $sentencia->execute();
 $listar_empleados=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
@@ -74,7 +90,7 @@ $listar_empleados=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <td scope="row">
                     <?php echo $registro["primernombre"]; ?>
                     <?php echo $registro["segundonombre"]; ?>
-                    <?php echo $registro["primeapellido"]; ?>
+                    <?php echo $registro["primerapellido"]; ?>
                     <?php echo $registro["segundoapellido"]; ?>
                     </td>
                     <td><?php echo $registro["cedula"]; ?></td>
@@ -82,12 +98,12 @@ $listar_empleados=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
                     <td><?php echo $registro["foto"]; ?></td>
                     <td><?php echo $registro["cv"]; ?></td>
-                    <td><?php echo $registro["id_puesto"]; ?></td>
+                    <td><?php echo $registro["nombredelpuesto"]; ?></td>
                     <td><?php echo $registro["fecha_ingreso"]; ?></td>
                     <td>
-                    <a name="" id="" class="btn btn-primary" href="#" role="button">Carta</a> 
+                    <!--a name="" id="" class="btn btn-primary" href="#" role="button">Carta</a> 
                     |<a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
-                    |<a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a> </td>
+                    |<a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a> </td -->
                 </tr>
 
                 <?php } ?>
