@@ -16,6 +16,43 @@
 </head>
 
 <body>
+<?php
+include("../../config.php");
+if($_POST){
+  //recoleccion de datos mediante post
+   $primernombre=(isset($_POST["primernombre"])?$_POST["primernombre"]:"");
+   $segundonombre=(isset($_POST["segundonombre"])?$_POST["segundonombre"]:"");
+   $primerapellido=(isset($_POST["primerapellido"])?$_POST["primerapellido"]:"");
+   $segundoapellido=(isset($_POST["segundoapellido"])?$_POST["segundoapellido"]:"");
+   $cedula=(isset($_POST["cedula"])?$_POST["cedula"]:"");
+   $edad=(isset($_POST["edad"])?$_POST["edad"]:"");
+
+   $foto=(isset($_FILES["foto"]["name"])?$_FILES["foto"]["name"]:"");
+   $cv=(isset($_FILES["CV"]["name"])?$_FILES["CV"]["name"]:"");
+
+   $idpuestos=(isset($_POST["idpuestos"])?$_POST["idpuestos"]:"");
+   $fechadeingreso=(isset($_POST["fechadeingreso"])?$_POST["fechadeingreso"]:"");
+   $telefono=(isset($_POST["telefono"])?$_POST["telefono"]:"");
+
+   
+   //preparar la inserccion de los datos
+   $sentencia=$conexion->prepare("INSERT INTO empleado(id,nombre_usuario,password,id_estado_usuario,correo)
+            VALUES (default, :nombre_usuario,:password,1,:correo)");
+            //            VALUES (default, :nombre_usuario,:password,1,:fecha_creacion,:correo");
+  //valores que tienen uso de :variable  
+  $sentencia->bindParam(":nombre_usuario",$usuario);
+  $sentencia->bindParam(":password",$password);
+  //fecha de creacio
+  $sentencia->bindParam(":correo",$correo);
+
+  $sentencia->execute();
+  header("Location:index.php");
+}
+
+  $sentencia=$conexion->prepare("SELECT * FROM puesto");
+  $sentencia->execute();
+  $listar_puestos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+?>
   <header>
   <?php include("../../vista/header.php"); ?>
 
@@ -81,17 +118,25 @@
 
         <div class="mb-3">
             <label for="idpuestos" class="form-label">Puestos:</label>
+
             <select class="form-select form-select-sm" name="idpuestos" id="idpuestos">
-                <option selected>Select one</option>
-                <option value="">New Delhi</option>
-                <option value="">Istanbul</option>
-                <option value="">Jakarta</option>
+              <?php foreach($listar_puestos as $registro) {?>
+              <option value="<?php echo $registro["id"]?>">
+              <?php echo $registro["nombredelpuesto"]?></option>
+              <?php } ?>
             </select>
+
         </div>
 
         <div class="mb-3">
           <label for="fechadeingreso" class="form-label">Fecha de ingreso:</label>
           <input type="date" class="form-control" name="fechadeingreso" id="fechadeingreso" aria-describedby="emailHelpId" placeholder="Fecha de ingreso">        
+        </div>
+
+        <div class="mb-3">
+          <label for="telefono" class="form-label">N° de Telefono:</label>
+          <input type="text"
+            class="form-control" name="telefono" id="telefono" aria-describedby="helpId" placeholder="Ingrese su n° de telefono">
         </div>
 
         <button type="submit" class="btn btn-success">Agregar registro</button>
