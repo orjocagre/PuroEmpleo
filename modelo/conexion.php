@@ -36,7 +36,7 @@ class CConexion {
         $conexion = self::ConexionBD();
         if($conexion != null) {
             $conexion->exec($sql);
-            return 1;
+            return $conexion->lastInsertId();
         }
         else {
             return 0;

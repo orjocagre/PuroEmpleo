@@ -1,7 +1,10 @@
 <?php
 require_once("../controlador/agregar_oferta_controlador.php");
 $controlador = new Agregar_Oferta_Controlador();
-
+if($_POST) {
+    $controlador->insertarOferta($_POST['direccion'],$_POST['barrio'],$_POST['puesto'],1,$_POST['salario'],$_POST['horario'],$_POST['prestaciones'],$_POST['descripcion']);
+    print_r($_POST);
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +25,7 @@ $controlador = new Agregar_Oferta_Controlador();
 
 
 
-        <form class="contenedor_oferta" id="frm">
+        <form class="contenedor_oferta" id="frm" action="#" method="post">
             <Section>
                 <h1>
                     <center>OLIVA</center>
@@ -36,7 +39,7 @@ $controlador = new Agregar_Oferta_Controlador();
                 <div class="agregar_puesto">
                     <label>Puesto:</label>
                     <!--AGREGAR PHP-->
-                    <select name="select">
+                    <select name="puesto">
                         <?php 
                         foreach($controlador->datosPuesto as $puesto) {
                             echo '<option value="'.$puesto['id'].'">'.$puesto['nombre'].'</option>';
@@ -48,18 +51,18 @@ $controlador = new Agregar_Oferta_Controlador();
                 <!--AGREGAR PHP INGRESAR PUESTO-->
                 <div class="ingresar_descripcion">
                     <label>Descripcion del puesto:</label>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Describa el puesto"></textarea>
+                    <textarea name="descripcion" id="" cols="30" rows="10" placeholder="Describa el puesto"></textarea>
                 </div>
                 <!--AGREGAR PHP INGRESAR SALARIO-->
                 <div class="ingresar_salario">
                     <label>Salario:</label>
-                    <input type="text" placeholder="Ingrese salario">
+                    <input type="text" placeholder="Ingrese salario" name="salario">
                 </div>
                 <!--AGREGAR PHP INGRESAR Ingresar Experiencia-->
                 <div class="ingresar_prestaciones">
 
                     <label>Prestaciones:</label>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Escriba las prestaciones"></textarea>
+                    <textarea name="prestaciones" id="" cols="30" rows="10" placeholder="Escriba las prestaciones"></textarea>
                 </div>
 
 
@@ -73,12 +76,12 @@ $controlador = new Agregar_Oferta_Controlador();
                     <!--AGREGAR PHP INGRESAR Ingresar Dirrección-->
                     <div class="agregar_area">
                         <label>Dirección:</label>
-                        <input type="text" placeholder="Ingrese la dirrección">
+                        <input name="direccion" type="text" placeholder="Ingrese la dirrección">
                     </div>
                     <!--AGREGAR PHP INGRESAR Ingresar Agregar Barrio-->
                     <div class="ingresar_barrio">
                         <label>Seleccionar Barrio:</label>
-                        <select name="select">
+                        <select name="barrio">
                             <?php 
                             foreach($controlador->datosBarrio as $barrio) {
 
@@ -90,7 +93,7 @@ $controlador = new Agregar_Oferta_Controlador();
                     <!--AGREGAR PHP INGRESAR Ingresar Agregar Barrio-->
                     <div class="ingresar_Municipios">
                         <label>Seleccionar Municipio:</label>
-                        <select name="select">
+                        <select name="municipio">
                             <?php 
                             foreach($controlador->datosMunicipio as $municipio) {
                                 echo '<option value="'.$municipio['id'].'">'.$municipio['nombre'].'</option>';
@@ -100,14 +103,14 @@ $controlador = new Agregar_Oferta_Controlador();
                     </div>
                     <!--AGREGAR PHP INGRESAR Ingresar Ingresar Barrio-->
                     <div class="ingresar_fecha">
-                        <div method="post" action="/send/">
+                        <div action="/send/">
                             <label>Selecciona la fecha deseada:</label>
                             <input type="date" value="2024-02-25">
                         </div>
                     </div>
                     <div class="ingresar_horario">
                         <label>Jornada Laboral</label>
-                        <input type="text" placeholder="Ingrese la Jornada">
+                        <input name="horario" type="text" placeholder="Ingrese la Jornada">
                     </div>
                     <section class="fondo">
                         <img src="../assets/img/perfil/oja_tabac.png" alt="">

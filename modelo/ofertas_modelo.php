@@ -16,5 +16,11 @@ class Oferta {
         $resultado = CConexion::buscarBD($sql);
         return $resultado;
     }
+
+    public function insertarOferta($id_puesto, $id_fabrica, $salario, $horario, $prestaciones, $descripcion, $id_direccion) {
+        $sql = "insert into vacante (id_puesto, id_fabrica, id_estado_vacante, fecha, salario, horario, prestaciones, id_usuario_fabrica, descripcion, id_direccion) values ($id_puesto, $id_fabrica, 1, '".date("Y-m-d")."', $salario, '$horario', '$prestaciones', 1, '$descripcion', $id_direccion)";
+        echo $sql;
+        CConexion::insertarBD($sql);
+    }
 }
 ?>
