@@ -8,6 +8,7 @@ const ubicacion = document.querySelector('.info-general .ubicacion');
 const horario = document.querySelector('.info-general .horario');
 const fecha = document.querySelector('.info-general .fecha');
 const salario = document.querySelector('.salario h3');
+const salariodesc = document.querySelector('.salario p');
 const prestaciones = document.querySelector('.prestaciones p');
 const descripcion = document.querySelector('.descripcion p');
 const contenedor_info = document.querySelector('.contenedor-info');
@@ -54,6 +55,7 @@ function click_article_oferta(event) {
     horario.innerHTML = '<span></span> '+seleccionado.attributes.horario.value;
     fecha.innerHTML = '<span></span> Publicado el '+seleccionado.attributes.fecha.value;
     salario.innerHTML = 'C$ '+parseFloat(seleccionado.attributes.salario.value).toLocaleString('en-US');
+    salariodesc.innerHTML = seleccionado.attributes.salariodesc.value;
     prestaciones.innerHTML = seleccionado.attributes.prestaciones.value;
     descripcion.innerHTML = seleccionado.attributes.descripcion.value;
     id_fabrica_seleccionada = seleccionado.attributes.idfabrica.value;
