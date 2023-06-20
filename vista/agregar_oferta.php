@@ -1,3 +1,9 @@
+<?php
+require_once("../controlador/agregar_oferta_controlador.php");
+$controlador = new Agregar_Oferta_Controlador();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,9 +37,11 @@
                     <label>Puesto:</label>
                     <!--AGREGAR PHP-->
                     <select name="select">
-                        <option value="value1">Bonchero</option>
-                        <option value="value2" selected>Rolero</option>
-                        <option value="value3">Pre Industria</option>
+                        <?php 
+                        foreach($controlador->datosPuesto as $puesto) {
+                            echo '<option value="'.$puesto['id'].'">'.$puesto['nombre'].'</option>';
+                        }
+                        ?>
                     </select>
 
                 </div>
@@ -71,18 +79,23 @@
                     <div class="ingresar_barrio">
                         <label>Seleccionar Barrio:</label>
                         <select name="select">
-                            <option value="value1">Omar Torrijos</option>
-                            <option value="value2" selected>Oscar Gamez</option>
-                            <option value="value3">Rosario</option>
+                            <?php 
+                            foreach($controlador->datosBarrio as $barrio) {
+
+                                echo '<option value="'.$barrio['id'].'">'.$barrio['nombre'].'</option>';
+                            }
+                            ?>
                         </select>
                     </div>
                     <!--AGREGAR PHP INGRESAR Ingresar Agregar Barrio-->
                     <div class="ingresar_Municipios">
                         <label>Seleccionar Municipio:</label>
                         <select name="select">
-                            <option value="value1">Estelí</option>
-                            <option value="value2" selected>Condega</option>
-                            <option value="value3">La Trinidad</option>
+                            <?php 
+                            foreach($controlador->datosMunicipio as $municipio) {
+                                echo '<option value="'.$municipio['id'].'">'.$municipio['nombre'].'</option>';
+                            }
+                            ?>
                         </select>
                     </div>
                     <!--AGREGAR PHP INGRESAR Ingresar Ingresar Barrio-->
