@@ -27,6 +27,7 @@ $controlador = new Busqueda_Controlador("","");
    <main>
         <!--Portada-->
 
+
         <div class="container__portada div__offset">
             <div class="portada">
                 <section class="text__portada">
@@ -92,7 +93,7 @@ $controlador = new Busqueda_Controlador("","");
         <div class="acceso_plataforma">
                <div class="btns_acceso">
                  <a href="./busqueda.html" class="btn__accinicio">Inicia Sesión</a>
-                 <a href="#" class="btn__accregistro">Registrate</a>
+                 <a href="./perfil_trabajador.php" class="btn__accregistro">Registrate</a>
                </div>
                 
                 

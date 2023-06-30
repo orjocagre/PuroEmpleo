@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}  
+:root{
+    --color_text-primario:#E5841A;
+    --color_text_secundario:#5D7C29;
+    --color_text_terciario:#1F2B0B;
+    --color_text_cuaternario:#643604;
+    --color_text_quinto:beige;;
+}
+.encabezado_trabajador {
+    padding: 40px 230px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.encabezado_trabajador picture {
+    border-radius: 150px;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+}
+.logo_trabajador{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto_perfil h1{
+    font-size: 50px;
+    color: var(--color_text_secundario);
+    text-align: justify;
+}
+.texto_perfil h2{
+    font-size: 30px;
+    color: black;
+}
+/*ESTILO DE MENU DE PERFIL DE LA trabajador*/
+.menu_perfil{
+    background:#ffffff;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 100px;
+    box-shadow: rgba(125, 150, 155, 0.2) 0px 7px 29px 0px;
+}
+.menu_perfil button{ 
+    padding: 10px 50px;
+    border: none;
+    border-radius: 100px;
+    background-color: var(--color_text_quinto);
+    transition: all 300ms;
+    color: var(--color_text_terciario);
+    font-weight: bold;
+    box-shadow: rgba(114, 150, 117, 0.2) 0px 7px 29px 0px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+.menu_perfil button:hover{
+    background-color: var(--color_text-primario);
+}
+
+
+#caja_curriculum,#caja_estado_oferta,#caja_favoritos{
+    width: 1100px;
+	margin: 10px auto;
+    border-radius: 25px;
+    box-shadow: rgba(125, 150, 155, 0.2) 0px 7px 29px 0px;
+	transition-duration: 4s;
+    color:var(--color_text_cuaternario);
+    padding: 30px;
+}
+#caja_estado_oferta {
+    padding: 0;
+    overflow: hidden;
+}
+.texto_desc {
+    font-size: 22px;
+}
+.texto_info {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+.tbexperiencia {
+    width: 100%;
+    text-align: center;
+}
+.tbexperiencia th {
+    background-color: var(--color_text_quinto);
+}
+
+
+
+/*--------------------------------caja_estado_oferta-------------------------------------------------------------*/
+
+.contenedor-ofertas {
+    height: fit-content;
+    display: block;
+}
+.contenedor-descripcion {
+    display: none;/*block*/
+    animation-duration: 0.2s;
+}
+.click-oferta {
+    animation-name: cambioOferta;
+}
+@keyframes cambioOferta {
+    0% {transform: translateX(0px);}
+    50% {transform: translateX(10px);}
+    100% {transform: translateX(0px);}
+}
+.sin-resultados {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sin-resultados p {
+    font-size: 34px;
+}
+article {
+    background-color: white;
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2%;
+    cursor: pointer;
+    border-bottom: 2px solid rgb(194, 194, 194);
+    z-index: 2;
+    transition-duration: 0.2s;
+}
+.seleccionado {
+    background: linear-gradient(90deg, white 30%, var(--color_text_quinto));
+    color: var(--color_text-primario);
+}
+.img-fabrica {
+    background-color: rgb(248, 242, 242);
+    width: 180px;
+    height: auto;
+    margin-right: 20px;
+}
+article span {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*ubicacion  #266B14 https://www.flaticon.es/icono-gratis/mapa_3082383?term=ubicacion&page=1&position=6&origin=search&related_id=3082383*/
+}
+article:hover {
+    background-color: var(--color_text_quinto);
+}
+.ubicacion span {
+    background-image: url(../icons/ubicacion.png);
+}
+.fecha span {
+    background-image: url(../icons/reloj.png);
+}
+article .estado {
+    font-weight: bold;
+    font-size: 28px;
+    color: var(--color_text_secundario);
+    text-transform: capitalize;
+}
+
+
+
+/*----------------------contenedor descripcion-----------------------------*/
+
+.contenedor-descripcion {
+    background-color: var(--color_text_quinto);
+    padding: 0 30px;
+    display: none;
+}
+.contenedor-descripcion section {
+    padding: 30px 0;
+    border-bottom: 2px solid black;
+}
+.encabezado {
+    padding-bottom: 15px;
+    position: relative;
+}
+.encabezado h1 {
+    font-size: 60px;
+    line-height: 45px;
+    color: var(--color_text_secundario);
+}
+.encabezado h2 {
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+.encabezado h2 a {
+    color: black;
+}
+.encabezado button {
+    font-size: 25px;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: var(--color_text-primario);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+.btn-aplicar:hover,
+.btn-guardar:hover {
+    background-color: var(--color_text_secundario);
+}
+.encabezado .btn-cerrar {
+    position: absolute;
+    right: 12px;
+    top: 42px;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding: 0;
+    background-color: transparent;
+    background-image: url(../icons/equis.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+.encabezado .btn-cerrar:hover {
+    transform: scale(1.4);
+}
+
+.contenedor-descripcion .info-general {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info-general {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 22px;
+}
+.info-general span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.info-general .ubicacion{
+    width: 50%;
+}
+.horario span {
+    background-image: url(../icons/sol.png);
+}
+.salario,
+.prestaciones,
+.descripcion
+{
+    font-size: 20px;
+}
+.salario div{
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+}
+.salario h3 {
+    margin-left: 40px;
+    color: var(--color_text-primario);
+    font-weight: 300;
+    font-size: 28px;
+}
+
+
+/*Responsive*/
+
+
+/*Cuando sea  Telefono*/
+
+@media screen and (max-width:1080px){
+
+    header{
+        width: 100%;
+        height: 100px;
+        position:static;
+        z-index: 100;
+    
+    }
+    .logo img{
+        width: 250px;
+      margin: 0px;
+    }
+    .container__header{
+        width: 100%;
+    }
+    .container__portada{
+    
+        padding-top: 0px;
+       
+    
+    }
+    .menu nav{
+        position: fixed;
+        top: 0%;
+        right: -250px;
+       background:var(--color_text_quinto);
+       width: 250px;
+       height: 100vh;
+       padding: 40px;
+       z-index: 1;
+       transition: all 300ms;
+    }
+    .text__portada{
+        padding-right: 0px;
+    }
+    .text__portada p{
+        font-size: 20px;
+        font-weight: normal;
+        text-align: justify;
+    }
+    .imagen_portada{
+        display: none;
+    }
+    .menu ul{
+        flex-direction: column;
+        margin-top: 40px;
+   
+    }
+    .menu ul li{
+         margin-top: 30px;
+    }
+
+    .menu nav ul li a{
+        color: var(--color_text_secundario);
+    }
+    .menu nav img{
+        display: block;
+        width: 200px;
+        margin: auto;
+    }
+
+    #back_menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(112, 25, 25, 0.096);
+        display: none;
+    }
+    .menu #btn_menu{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color_text_secundario);
+        font-size: 24px ;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 300ms;
+        
+    }
+    .menu #btn_menu:hover{
+
+        background:rgb(255, 255, 255,0.2) ;
+    }
+    .info_trabajador{
+        align-items:flex-start;
+    }
+    .logo_trabajador img{
+        border-radius: 150px;
+        width: 60px;
+        height: 60px;
+        
+    }
+    .menu_perfil{
+         /*align-items:center ;
+         background-color: aqua;
+         max-width: 1200px;
+         border-radius: 100px;
+         padding: 0px 20px;*/
+           background:#ffffff;
+           max-width: 100;
+           height: 100%;
+           margin: 5px;
+           align-items: center;
+           padding: 0px 20px;
+           border-radius: 100px;
+          
+           box-shadow: rgba(125, 150, 155, 0.2) 0px 7px 29px 0px;
+    }
+    .btn__empresa,.btn__ofertas,.btn__calificacion {
+        padding: 10px 5px;
+    }
+    #caja_curriculum,#caja_estado_oferta,#caja_favoritos{
+        display: none;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+    .menu_perfil nav{
+        margin: 0px 0px;
+    }
+    .menu_perfil nav ul li{
+        list-style: none;
+        margin: 20px 20px;
+    }
+
+}
