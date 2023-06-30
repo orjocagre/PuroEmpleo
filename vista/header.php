@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 $url_base="http://localhost/PuroEmpleo";
 //if(!isset($_SESSION['usuario'])){
 //    header("Location:".$url_base."login.php"); <li><a href="/login.php" class="btn__inicio">Inicia Sesión</a></li>

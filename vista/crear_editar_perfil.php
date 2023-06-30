@@ -1,16 +1,7 @@
 <?php
-require_once("../controlador/busqueda_controlador.php");
-
-if ($_POST) {
-    $pos = strpos($_POST['lugar'], "-");
-    if ($pos != false) {
-        $lugart = substr($_POST['lugar'], 0, $pos - 1);
-        $controlador = new Busqueda_Controlador($_POST['puesto'], $lugart);
-    } else {
-        $controlador = new Busqueda_Controlador($_POST['puesto'], $_POST['lugar']);
-    }
-} else
-    $controlador = new Busqueda_Controlador("", "");
+require_once("../controlador/crear_editar_perfil_controlador.php");
+session_start();
+$controlador = new Crear_Editar_Perfil_Controlador($_SESSION['idU']);
 
 ?>
 <!DOCTYPE html>
@@ -34,15 +25,15 @@ if ($_POST) {
 
             <div class="contenedor_empresa">
                 <section class="foto_perfil">
-                    <img src="../assets/img/logo/oliva.jpg" alt="">
+                    <img src="../assets/img/logo/<?php echo $controlador->datosFabrica[0]['logo'];?>" alt="">
                 </section>
 
                 <div class="info_perfil">
-                    <h2>*GRUPO OLIVA*</h2>
+                    <h2><?php echo $controlador->datosFabrica[0]['nombre'];?></h2>
                     <section class="numero_empleados">
                         <!--AGREGAR EL CAMBIO DE EMPLEADOS CON EL BTN CAMBIAR EL VALOR EN LA ETIQUETA P-->
                         <i class="fa-solid fa-user"></i>
-                        <p>5340 trabajadores</p>
+                        <p><?php echo $controlador->datosFabrica[0]['empleados'];?> trabajadores</p>
                     </section>
                 </div>
 
@@ -70,6 +61,9 @@ if ($_POST) {
             </div>
 
 
+        </div>
+        <div class="titulo_ofertas_publicadas">
+            <p>Ofertas Publicadas</p>
         </div>
         <section class="ofertas_publicadas">
             <div class="contenedor-ofertas">

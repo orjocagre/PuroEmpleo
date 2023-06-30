@@ -120,6 +120,14 @@
 
 /*--------------------------------ofertas publicadas-------------------------------------------------------------*/
 
+.titulo_ofertas_publicadas {
+    font-size: 30px;
+    color: #1F2B0B;
+    padding-top: 50px;
+    margin: 0 auto;
+    max-width: 1200px;
+    border-bottom: 2px solid rgb(194, 194, 194);
+}
 
 /*Mostrar al entrar*/
 .ofertas_publicadas {
@@ -127,7 +135,7 @@
     justify-self: center;
     display: flex;
     flex-direction: row;
-    padding: 50px 0px 0 0px;
+    padding: 0;
     min-height: 75vh;
     max-width: 1200px;
 }
