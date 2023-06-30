@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edicción Perfil</title>
-    <link rel="stylesheet" href="../assets/css/edit_perfil.css">
+    <link rel="stylesheet" href="../assets/css/ediccion_perfil.css">
 
 </head>
 
