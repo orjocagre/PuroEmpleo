@@ -249,6 +249,17 @@ article:hover {
     cursor: pointer;
     transition-duration: 0.4s;
 }
+.encabezado .btn-aplicar {
+    font-size: 25px;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: var(--color_text-primario);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
 .btn-aplicar:hover,
 .btn-guardar:hover {
     background-color: var(--color_text_secundario);

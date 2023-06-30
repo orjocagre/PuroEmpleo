@@ -23,5 +23,15 @@ class Fabrica {
         $resultado = CConexion::buscarBD($sql);
         return $resultado;
     }
+
+
+    public function esfabrica($idusuario) {
+
+        $sql = "select count(*) from usuario_fabrica where usuario_fabrica.id_usuario = ".$idusuario;
+        $resultado = CConexion::buscarBD($sql);
+        if($resultado[0]["count"] > 0) 
+        return true;
+        return false;
+    }
+
 }
-?>
