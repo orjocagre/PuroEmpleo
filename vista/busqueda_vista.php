@@ -87,7 +87,7 @@ $controlador = new Busqueda_Controlador("","");
             foreach($controlador->datosOferta as $oferta) {
                 echo(
                     '
-                    <article idOferta="'.$oferta['id'].'" puesto="'.$oferta['puesto'].'" fabrica="'.$oferta['fabrica'].'" idfabrica="'.$oferta['idfabrica'].'" municipio="'.$oferta['municipio'].'" barrio="'.$oferta['barrio'].'" direccion="'.$oferta['direccion'].'" fecha="'.$oferta['fecha'].'" horario="'.$oferta['horario'].'" salario="'.$oferta['salario'].'" prestaciones="'.$oferta['prestaciones'].'" descripcion="'.$oferta['descripcion'].'">
+                    <article idOferta="'.$oferta['id'].'" puesto="'.$oferta['puesto'].'" fabrica="'.$oferta['fabrica'].'" idfabrica="'.$oferta['idfabrica'].'" municipio="'.$oferta['municipio'].'" barrio="'.$oferta['barrio'].'" direccion="'.$oferta['direccion'].'" fecha="'.$oferta['fecha'].'" horario="'.$oferta['horario'].'" salario="'.$oferta['salario'].'" salariodesc="'.$oferta['salariodesc'].'" prestaciones="'.$oferta['prestaciones'].'" descripcion="'.$oferta['descripcion'].'">
                         <img class="img-fabrica" src="../assets/img/logo/'.$oferta['logo'].'" alt="'.$oferta['logo'].'">
                         <div class="contenedor-informacion">
                             <p class="puesto">'.$oferta['puesto'].'</p>
