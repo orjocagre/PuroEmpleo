@@ -149,9 +149,13 @@ if ($_GET) {
 
 
             </div>
-
+            <!--AGREGAR PHP-->
+            <!--AGREGAR PHP APARTADO CALIFICACIONES Y COMENTARIOS-->
             <div id="caja_calificacion">
+                <!--DIV DE APARTADO PARA COMENTAR Y CALIFICAR LA FABRICA-->
                 <div class="contenedor_publicar">
+
+
 
                     <div class="puntuacion_empresa">
                         <p id="texto_info">Calificanos segun tu experiencia</p>
@@ -255,7 +259,7 @@ if ($_GET) {
                     <div class="lista_comentarios">
                         <article class="mi_opinion">
 
-                           
+
                             <div class="perfil_publicado">
 
                                 <section class="perfil_f">
@@ -276,7 +280,25 @@ if ($_GET) {
                             <p class="parrafo_comentario">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                 Fugitsimilique accusantium iusto eaque dolor tempora, blanditiis veniam iusto
                                 accusantium
-                                voluptates non eligendi assumenda in nemo nulla doloremque?Lorem ipsum dolor, sit amet consectetur adipisicing elit. At iusto natus voluptates labore? Id eveniet corporis nisi expedita sunt optio at dolores cupiditate harum hic possimus animi iste natus minus aut rerum delectus magnam qui, quibusdam laudantium magni sit repellat quae similique. Incidunt quisquam dolore quaerat dolores? Quidem dolore itaque nihil repellendus pariatur tempore? Dolores, deleniti distinctio! Minus culpa pariatur quae accusamus quod, exercitationem dolores est, molestias perferendis eius asperiores excepturi consectetur voluptate voluptatem velit quas itaque tempore porro earum provident ducimus recusandae. Quasi dignissimos omnis eum sit. Ipsum earum blanditiis ad dignissimos? Blanditiis a iure recusandae quidem sint exercitationem aut debitis eum facere, optio minima temporibus vero rem voluptatibus quos eius. Beatae officia placeat, animi atque unde debitis tempora dolorum autem iure laborum voluptatum eos nihil est odit optio sint doloremque necessitatibus asperiores molestias nemo facere labore impedit repellat cumque! Qui enim ipsa aut atque distinctio! Consequuntur dolores similique quidem eum ea dignissimos laudantium ab iure repellendus illo pariatur sit expedita eius commodi cumque vero officiis ipsam facilis, obcaecati adipisci debitis impedit aperiam. Alias nobis inventore quidem aut quasi provident dolorum repudiandae aperiam doloremque fugit reprehenderit quo nam itaque ea consequatur autem quaerat quam quisquam, sapiente mollitia minima molestias.
+                                voluptates non eligendi assumenda in nemo nulla doloremque?Lorem ipsum dolor, sit amet
+                                consectetur adipisicing elit. At iusto natus voluptates labore? Id eveniet corporis nisi
+                                expedita sunt optio at dolores cupiditate harum hic possimus animi iste natus minus aut
+                                rerum delectus magnam qui, quibusdam laudantium magni sit repellat quae similique.
+                                Incidunt quisquam dolore quaerat dolores? Quidem dolore itaque nihil repellendus
+                                pariatur tempore? Dolores, deleniti distinctio! Minus culpa pariatur quae accusamus
+                                quod, exercitationem dolores est, molestias perferendis eius asperiores excepturi
+                                consectetur voluptate voluptatem velit quas itaque tempore porro earum provident ducimus
+                                recusandae. Quasi dignissimos omnis eum sit. Ipsum earum blanditiis ad dignissimos?
+                                Blanditiis a iure recusandae quidem sint exercitationem aut debitis eum facere, optio
+                                minima temporibus vero rem voluptatibus quos eius. Beatae officia placeat, animi atque
+                                unde debitis tempora dolorum autem iure laborum voluptatum eos nihil est odit optio sint
+                                doloremque necessitatibus asperiores molestias nemo facere labore impedit repellat
+                                cumque! Qui enim ipsa aut atque distinctio! Consequuntur dolores similique quidem eum ea
+                                dignissimos laudantium ab iure repellendus illo pariatur sit expedita eius commodi
+                                cumque vero officiis ipsam facilis, obcaecati adipisci debitis impedit aperiam. Alias
+                                nobis inventore quidem aut quasi provident dolorum repudiandae aperiam doloremque fugit
+                                reprehenderit quo nam itaque ea consequatur autem
+                                quaerat quam quisquam, sapiente mollitia minima molestias.
                             </p>
 
 
@@ -284,7 +306,7 @@ if ($_GET) {
                         </article>
                         <article class="mi_opinion">
 
-                            
+
                             <div class="perfil_publicado">
 
                                 <section class="perfil_f">
@@ -313,7 +335,7 @@ if ($_GET) {
                         </article>
                         <article class="mi_opinion">
 
-                            
+
                             <div class="perfil_publicado">
 
                                 <section class="perfil_f">
