@@ -1,9 +1,9 @@
 <?php
 require_once("../controlador/agregar_oferta_controlador.php");
-$controlador = new Agregar_Oferta_Controlador();
+session_start();
+$controlador = new Agregar_Oferta_Controlador($_SESSION['idU']);
 if($_POST) {
-    $controlador->insertarOferta($_POST['direccion'],$_POST['barrio'],$_POST['puesto'],1,$_POST['salario'],$_POST['horario'],$_POST['prestaciones'],$_POST['descripcion']);
-    print_r($_POST);
+    $controlador->insertarOferta($_POST['direccion'],$_POST['barrio'],$_POST['puesto'],$_SESSION['idU'],$_POST['salario'],$_POST['horario'],$_POST['prestaciones'],$_POST['descripcion']);
 }
 ?>
 
@@ -28,9 +28,9 @@ if($_POST) {
         <form class="contenedor_oferta" id="frm" action="#" method="post">
             <Section>
                 <h1>
-                    <center>OLIVA</center>
+                    <center><?php echo $controlador->datosFabrica[0]['nombre'];?></center>
                 </h1>
-                <img src="../assets/img/logo/oliva.jpg" alt="">
+                <img src="../assets/img/logo/<?php echo $controlador->datosFabrica[0]['logo'];?>" alt="">
             </Section>
 
 

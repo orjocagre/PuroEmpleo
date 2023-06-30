@@ -16,5 +16,12 @@ class Fabrica {
         $resultado = CConexion::buscarBD($sql);
         return $resultado;
     }
+
+    public function buscarIdFabrica($idusuario) {
+
+        $sql = "select usuario_fabrica.id_fabrica as id from usuario_fabrica where usuario_fabrica.id_usuario = ".$idusuario;
+        $resultado = CConexion::buscarBD($sql);
+        return $resultado;
+    }
 }
 ?>
