@@ -16,6 +16,7 @@
     $controlador = new Agregar_Oferta_Controlador($_SESSION['idU']);
     if ($_POST) {
         $controlador->insertarOferta($_POST['direccion'], $_POST['barrio'], $_POST['puesto'], $_SESSION['idU'], $_POST['salario'], $_POST['horario'], $_POST['prestaciones'], $_POST['descripcion']);
+        header("Location: ./crear_editar_perfil.php");
     }
     ?>
 

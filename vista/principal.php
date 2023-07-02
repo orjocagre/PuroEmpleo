@@ -20,7 +20,12 @@ $controlador = new Busqueda_Controlador("","");
     
 </head>
 <body>
-    <?php include("./header.php");?>
+    <?php include("./header.php");
+    // print_r("idU: ".$_SESSION['idU']);
+    // print_r("/nomU: ".$_SESSION['nomU']);
+    // print_r("/logueado: ".$_SESSION['logueado']);
+    // print_r("/esfabrica: ".$_SESSION['esfabrica']);
+    ?>
     
    
      

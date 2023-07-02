@@ -1,27 +1,16 @@
 <?php
 
-include("config.php");
+include("./config.php");
 
 if (isset($_POST['submit'])) {
 
-   //$name = ($conexion, $_POST['nombre_usuario']);
-   //$correoe = ($conexion, $_POST['correo']);
-   //$pass = ($conexion, md5($_POST['pass']));
-   //$cpass = ($conexion, md5($_POST['cpassw']));
+   session_start();
+
    $name = (isset($_POST["usuario"]) ? $_POST["usuario"] : "");
    $correoe = (isset($_POST["correoe"]) ? $_POST["correoe"] : "");
    $pass = (isset($_POST["password"]) ? $_POST["password"] : "");
    $cpass = (isset($_POST["cpassword"]) ? $_POST["cpassword"] : "");
    $chbfabrica = (isset($_POST["chbfabrica"]) ? true : false);
-
-   //$name = pg_escape_string($conexion, $_POST['user']);
-   //$correoe = pg_escape_string($conexion, $_POST['correoe']);
-   //$pass = pg_escape_string($conexion, md5($_POST['pass']));
-   //$cpass = pg_escape_string($conexion, md5($_POST['cpassw']));
-
-   //$select_users= pg_query($conexion, "SELECT * FROM usuario 
-   //WHERE correo = '$name' AND password = '$pass'");
-
 
    $sentencia = $conexion->prepare("SELECT COUNT(*)
       FROM usuario
@@ -39,8 +28,6 @@ if (isset($_POST['submit'])) {
       if ($pass != $cpass) {
          $message = "confirmacion de contraseña no es la misma!";
       } else {
-         //pg_query($conexion, "INSERT INTO usuario(nombre_usuario, password, correo) 
-         //VALUES('$name', '$cpass', '$correoe'");
          $fechaactual = date("Y-m-d");
          $sql = "INSERT INTO usuario(nombre_usuario,password,id_estado_usuario,correo,fecha_creacion) VALUES ('" . $name . "','" . $pass . "',1,'" . $correoe . "','" . $fechaactual . "')";
          $sentencia = $conexion->prepare($sql);
@@ -51,7 +38,6 @@ if (isset($_POST['submit'])) {
 
          $lista_usuarios = $sentencia->fetch(PDO::FETCH_LAZY);
 
-         $_SESSION['usuario'] = $lista_usuarios['usuario'];
          $_SESSION['idU'] = $lista_usuarios['id'];
          $_SESSION['nomU'] = $lista_usuarios['nombre'];
          $_SESSION['logueado'] = true;
@@ -61,6 +47,7 @@ if (isset($_POST['submit'])) {
          if ($chbfabrica) {
             $_SESSION['esfabrica'] = true;
             header("Location: ./vista/edit_perfil.php");
+            
          } else {
             $_SESSION['esfabrica'] = false;
             header("Location: ./vista/add_curriculum.php");
@@ -165,10 +152,10 @@ if (isset($_POST['submit'])) {
                         <input type="submit" name="submit" value="registrarse" class="btn btn-primary">
 
 
-                        <a name="" id="" class="btn btn-secondary" href="index.php" role="button">cancelar</a>
+                        <a name="" id="" class="btn btn-secondary" href="./vista/principal.php" role="button">cancelar</a>
 
 
-                        <P> ya tienes una cuenta? <a href="/PuroEmpleo/acces/login.php"> Inicia Sesion! </a></P>
+                        <P> ya tienes una cuenta? <a href="./acces/login.php"> Inicia Sesion! </a></P>
 
                      </form>
                   </div>

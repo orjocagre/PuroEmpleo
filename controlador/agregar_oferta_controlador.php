@@ -25,7 +25,7 @@ class Agregar_Oferta_Controlador {
         $this->datosPuesto = $puesto->buscarPuesto();
 
         $fabrica = new Fabrica();
-        $this->datosFabrica = $fabrica->buscarFabrica($id);
+        $this->datosFabrica = $fabrica->buscarFabricaPorUsuario($id);
     }
 
     public function insertarOferta($descripcion_direccion, $id_barrio, $id_puesto, $id_usuario, $salario, $horario, $prestaciones, $descripcion) {
@@ -34,9 +34,10 @@ class Agregar_Oferta_Controlador {
 
         $fabrica = new Fabrica();
         $id_fabrica = ($fabrica->buscarIdFabrica($id_usuario))[0]['id'];
+        $id_usuario_fabrica = ($fabrica->buscarUsuarioDeFabrica($id_usuario))[0]['id'];
 
         $oferta = new Oferta();
-        $oferta->insertarOferta($id_puesto, $id_fabrica, $salario, $horario, $prestaciones, $descripcion, $id_direccion);
+        $oferta->insertarOferta($id_puesto, $id_fabrica, $salario, $horario, $prestaciones, $descripcion, $id_direccion, $id_usuario_fabrica);
 
     }
 }

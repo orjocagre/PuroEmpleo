@@ -1,9 +1,5 @@
 <?php
-require_once("../controlador/perfil_trabajador_controlador.php");
-session_start();
-print_r($_SESSION['idU']);
-$controlador = new Perfil_trabajador_Controlador($_SESSION['idU']);
-print_r($controlador->datosTrabajador[0]);
+
 
 ?>
 <!DOCTYPE html>
@@ -17,7 +13,11 @@ print_r($controlador->datosTrabajador[0]);
 </head>
 
 <body>
-    <?php include("../vista/header.php"); ?>
+    <?php
+    include("../vista/header.php");
+    require_once("../controlador/perfil_trabajador_controlador.php");
+    $controlador = new Perfil_trabajador_Controlador($_SESSION['idU']);
+    ?>
 
 
     <main>
@@ -100,7 +100,7 @@ print_r($controlador->datosTrabajador[0]);
                                 <p class="ubicacion"><span></span> Br. ' . $oferta['barrio'] . ' - ' . $oferta['municipio'] . '</p>
                                 <p class="fecha"><span></span> Publicado el ' . $oferta['fecha'] . '</p>
                             </div>
-                            <p class="estado">'.$oferta['estado'].'</p>
+                            <p class="estado">' . $oferta['estado'] . '</p>
                         </article>');
                     }
                 if (count($controlador->datosOferta) == 0)
@@ -158,7 +158,7 @@ print_r($controlador->datosTrabajador[0]);
                                 <p class="ubicacion"><span></span> Br. ' . $oferta['barrio'] . ' - ' . $oferta['municipio'] . '</p>
                                 <p class="fecha"><span></span> Publicado el ' . $oferta['fecha'] . '</p>
                             </div>
-                            <p class="estado">'.$oferta['estado'].'</p>
+                            <p class="estado">' . $oferta['estado'] . '</p>
                         </article>');
                     }
                 if (count($controlador->datosOferta) == 0)

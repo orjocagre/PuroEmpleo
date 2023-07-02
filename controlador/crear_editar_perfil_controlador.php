@@ -20,7 +20,7 @@ class Crear_Editar_Perfil_Controlador {
         $this->datosOferta = $ofertas->buscarOfertasPorUsuarioFabrica($id);
         
         $fabrica = new Fabrica();
-        $this->datosFabrica = $fabrica->buscarFabrica($id);
+        $this->datosFabrica = $fabrica->buscarFabricaPorUsuario($id);
 
         $municipio = new MunicipioModelo();
         $this->datosMunicipio = $municipio->buscarMunicipio();
