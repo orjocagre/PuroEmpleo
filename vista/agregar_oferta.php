@@ -1,12 +1,3 @@
-<?php
-require_once("../controlador/agregar_oferta_controlador.php");
-$controlador = new Agregar_Oferta_Controlador();
-if($_POST) {
-    $controlador->insertarOferta($_POST['direccion'],$_POST['barrio'],$_POST['puesto'],1,$_POST['salario'],$_POST['horario'],$_POST['prestaciones'],$_POST['descripcion']);
-    print_r($_POST);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +10,15 @@ if($_POST) {
 </head>
 
 <body>
-    <?php include("./header.php"); ?>
+    <?php
+    include("./header.php");
+    require_once("../controlador/agregar_oferta_controlador.php");
+    $controlador = new Agregar_Oferta_Controlador($_SESSION['idU']);
+    if ($_POST) {
+        $controlador->insertarOferta($_POST['direccion'], $_POST['barrio'], $_POST['puesto'], $_SESSION['idU'], $_POST['salario'], $_POST['horario'], $_POST['prestaciones'], $_POST['descripcion']);
+        header("Location: ./crear_editar_perfil.php");
+    }
+    ?>
 
     <main>
 
@@ -28,9 +27,9 @@ if($_POST) {
         <form class="contenedor_oferta" id="frm" action="#" method="post">
             <Section>
                 <h1>
-                    <center>OLIVA</center>
+                    <center><?php echo $controlador->datosFabrica[0]['nombre']; ?></center>
                 </h1>
-                <img src="../assets/img/logo/oliva.jpg" alt="">
+                <img src="../assets/img/logo/<?php echo $controlador->datosFabrica[0]['logo']; ?>" alt="">
             </Section>
 
 
@@ -40,9 +39,9 @@ if($_POST) {
                     <label>Puesto:</label>
                     <!--AGREGAR PHP-->
                     <select name="puesto">
-                        <?php 
-                        foreach($controlador->datosPuesto as $puesto) {
-                            echo '<option value="'.$puesto['id'].'">'.$puesto['nombre'].'</option>';
+                        <?php
+                        foreach ($controlador->datosPuesto as $puesto) {
+                            echo '<option value="' . $puesto['id'] . '">' . $puesto['nombre'] . '</option>';
                         }
                         ?>
                     </select>
@@ -72,7 +71,7 @@ if($_POST) {
 
                 <div class="informacion_empresa">
                     <h3>Datos de la Empresa</h3>
-    
+
                     <!--AGREGAR PHP INGRESAR Ingresar Dirrección-->
                     <div class="agregar_area">
                         <label>Dirección:</label>
@@ -82,10 +81,10 @@ if($_POST) {
                     <div class="ingresar_barrio">
                         <label>Seleccionar Barrio:</label>
                         <select name="barrio">
-                            <?php 
-                            foreach($controlador->datosBarrio as $barrio) {
+                            <?php
+                            foreach ($controlador->datosBarrio as $barrio) {
 
-                                echo '<option value="'.$barrio['id'].'">'.$barrio['nombre'].'</option>';
+                                echo '<option value="' . $barrio['id'] . '">' . $barrio['nombre'] . '</option>';
                             }
                             ?>
                         </select>
@@ -94,9 +93,9 @@ if($_POST) {
                     <div class="ingresar_Municipios">
                         <label>Seleccionar Municipio:</label>
                         <select name="municipio">
-                            <?php 
-                            foreach($controlador->datosMunicipio as $municipio) {
-                                echo '<option value="'.$municipio['id'].'">'.$municipio['nombre'].'</option>';
+                            <?php
+                            foreach ($controlador->datosMunicipio as $municipio) {
+                                echo '<option value="' . $municipio['id'] . '">' . $municipio['nombre'] . '</option>';
                             }
                             ?>
                         </select>
@@ -115,14 +114,14 @@ if($_POST) {
                     <section class="fondo">
                         <img src="../assets/img/perfil/oja_tabac.png" alt="">
                     </section>
-    
+
                 </div>
                 <button class="btn_agregar" type="submit" form="frm">Agregar Oferta</button>
             </div>
-            
 
-            
-            
+
+
+
         </form>
 
     </main>

@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
 
   <meta charset="utf-8">
@@ -19,6 +18,8 @@
 
   <?php
   include("../config.php");
+  require_once("../controlador/login_controlador.php");
+  $controlador = new Login_Controlador();
   session_start();
 
   if ($_POST) {
@@ -58,7 +59,8 @@
       $_SESSION['idU'] = $lista_usuarios['id'];
       $_SESSION['nomU'] = $lista_usuarios['nombre'];
       $_SESSION['logueado'] = true;
-      header("Location:../index.php");
+      $_SESSION['esfabrica'] = $controlador->esFabrica($_SESSION['idU']);
+      header("Location: ../vista/principal.php");
 
     } else {
       $mensaje = "Error: El usuario o contraseña son incorrectos!";
@@ -112,7 +114,7 @@
                 <br />
                 <br />
 
-                <P> No tienes una cuenta? <a href="register.php"> Registrate ahora! </a></P>
+                <P> No tienes una cuenta? <a href="../register.php"> Registrate ahora! </a></P>
 
               </form>
 

@@ -9,6 +9,6 @@ $password="8G7wBLZqK1tIq84xELRiVIzNsdcNxL";
 try {
     $conexion=new PDO("pgsql:host=$servidor;dbname=$BaseDatos",$usuario,$password);
 } catch (Exception $ex){
-    echo $ex >getMessage();
+    echo $ex->getMessage();
 }
 ?>

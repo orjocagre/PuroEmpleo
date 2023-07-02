@@ -16,5 +16,43 @@ class Fabrica {
         $resultado = CConexion::buscarBD($sql);
         return $resultado;
     }
+
+    public function buscarIdFabrica($idusuario) {
+
+        $sql = "select usuario_fabrica.id_fabrica as id from usuario_fabrica where usuario_fabrica.id_usuario = ".$idusuario;
+        $resultado = CConexion::buscarBD($sql);
+        return $resultado;
+    }
+    public function buscarUsuarioDeFabrica($idusuario) {
+
+        $sql = "select usuario_fabrica.id as id from usuario_fabrica where usuario_fabrica.id_usuario = ".$idusuario;
+        $resultado = CConexion::buscarBD($sql);
+        return $resultado;
+    }
+
+
+    public function esfabrica($idusuario) {
+
+        $sql = "select count(*) from usuario_fabrica where usuario_fabrica.id_usuario = ".$idusuario;
+        $resultado = CConexion::buscarBD($sql);
+        if($resultado[0]["count"] > 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    public function insertarFabrica($nombre, $calificaciones, $descripcion, $logo, $jornada, $empleados, $usuario, $idusuario, $iddireccion, $idcorreo, $idtelefono) {
+        $sql = "insert into fabrica (nombre, promedio_califiacione, descripcion, logo, jornada, empleados) values ('$nombre',$calificaciones,'$descripcion','$logo','$jornada',$empleados)";
+        $idfabrica = CConexion::insertarBD($sql);
+        $sql = "insert into usuario_fabrica (id_fabrica,nombre,clave,id_usuario) values ($idfabrica,'$usuario','$usuario',$idusuario)";
+        CConexion::insertarBD($sql);
+        $sql = "insert into fabrica_direccion (id_fabrica,id_direccion) values ($idfabrica,$iddireccion)";
+        CConexion::insertarBD($sql);
+        $sql = "insert into fabrica_correo (id_fabrica,id_correo) values ($idfabrica,$idcorreo)";
+        CConexion::insertarBD($sql);
+        $sql = "insert into fabrica_telefono (id_fabrica,id_telefono) values ($idfabrica,$idtelefono)";
+        CConexion::insertarBD($sql);
+    }
+
 }
-?>

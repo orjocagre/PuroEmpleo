@@ -1,9 +1,3 @@
-<?php
-require_once("../controlador/crear_editar_perfil_controlador.php");
-session_start();
-$controlador = new Crear_Editar_Perfil_Controlador($_SESSION['idU']);
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +13,12 @@ $controlador = new Crear_Editar_Perfil_Controlador($_SESSION['idU']);
 
 <body>
 
-    <?php include("./header.php"); ?>
+<?php
+include("./header.php");
+require_once("../controlador/crear_editar_perfil_controlador.php");
+$controlador = new Crear_Editar_Perfil_Controlador($_SESSION['idU']);
+
+?>
     <main>
         <div class="ediccion_perfil">
 
@@ -72,7 +71,7 @@ $controlador = new Crear_Editar_Perfil_Controlador($_SESSION['idU']);
                     foreach ($controlador->datosOferta as $oferta) {
                         echo (
                             '
-                        <article idOferta="' . $oferta['id'] . '" puesto="' . $oferta['puesto'] . '" fabrica="' . $oferta['fabrica'] . '" municipio="' . $oferta['municipio'] . '" barrio="' . $oferta['barrio'] . '" direccion="' . $oferta['direccion'] . '" fecha="' . $oferta['fecha'] . '" horario="' . $oferta['horario'] . '" salario="' . $oferta['salario'] . '" prestaciones="' . $oferta['prestaciones'] . '" descripcion="' . $oferta['descripcion'] . '">
+                        <article idOferta="' . $oferta['id'] . '" puesto="' . $oferta['puesto'] . '" fabrica="' . $oferta['fabrica'] . '" municipio="' . $oferta['municipio'] . '" barrio="' . $oferta['barrio'] . '" direccion="' . $oferta['direccion'] . '" fecha="' . $oferta['fecha'] . '" horario="' . $oferta['horario'] . '" salario="' . $oferta['salario'] . '" salariodesc="' . $oferta['salario'] . '" prestaciones="' . $oferta['prestaciones'] . '" descripcion="' . $oferta['descripcion'] . '">
                             <div class="contenedor-informacion">
                                 <p class="puesto">' . $oferta['puesto'] . '</p>
                                 <p class="fecha"><span></span> Publicado el ' . $oferta['fecha'] . '</p>
@@ -92,7 +91,7 @@ $controlador = new Crear_Editar_Perfil_Controlador($_SESSION['idU']);
                 <section class="encabezado">
                     <h1>Bonchero</h1>
                     <h2><a href="./perfil_fabrica.php">Fábrica Aganorsa</a></h2>
-                    <button class="btn-aplicar">Ver Solicitudes</button>
+                    <a href="./vista_solicitudes.php" class="btn-aplicar">Ver Solicitudes</a>
                     <button class="btn-guardar">Editar</button>
                     <button class="btn-guardar">Ocultar</button>
                     <button class="btn-guardar">Eliminar</button>
