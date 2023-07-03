@@ -162,8 +162,11 @@ footer{
     margin-top: 10px;
     color: #E5841A;
     font-weight: 500;
+    padding: 10px 10px;
     
-    
+}
+.box__footer i{
+    margin-right: 10px;
 }
 .box__footer a:hover{
     opacity: 0.8;

@@ -72,7 +72,7 @@ width: 100%;
     align-items: center;
     padding: 10px;
     height: 60px;
-    display: inline-block;
+    display: flex;
     border-radius: 40px; 
     background-color:#17f3170e;
 }
@@ -84,7 +84,7 @@ width: 100%;
     font-size: 20px;
     line-height: 60px;
     border-radius: 50px; 
-    width: calc(100% - 50px);
+    width: calc(100% - 60px);
 }
 
 .boton{
@@ -98,9 +98,9 @@ width: 100%;
     align-items: flex-start;
 }
 .iconos_busquedas{
-    width: 40px;
+  
     color: var(--color_text_terciario);
-    height: 40px;
+    margin-right: 10px;
     font-size: 30px;
     align-items: flex-start;
 }
@@ -112,18 +112,19 @@ width: 100%;
     font-size: 20px;
     line-height: 60px;
     border-radius: 50px;
-    width: calc(100% - 50px);
+    width: calc(100% - 60px);
 }
 .cargo{
     position: relative;
     width: calc((100% - 40px)/2);
-    display: inline-block;
+    display: flex;
     justify-content: center;
     align-items: center;
     background: #17f3170e;;
     padding: 10px;
     height: 60px;
     border-radius: 40px;  
+    
 }
 .acceso_plataforma {
     display: flex;
@@ -132,19 +133,21 @@ width: 100%;
     height: 100px;
 }
 .btn__accinicio{
-    padding: 5px 8px;
+    padding: 10px 12px;
     border-radius: 100px;
     background-color: var(--color_text_secundario);
     color: rgb(255, 255, 255);
     transition: all 300ms;
+    font-size: 24px;
 }
 .btn__accregistro{
-    padding: 5px 8px;
+    padding: 10px 12px;
     border-radius: 100px;
     background-color:  var(--color_text_secundario);
     color: white;
     transition: all 300ms;
     margin: 0px 20px;
+    font-size: 24px;
   
 }
 .btn__accinicio:hover{

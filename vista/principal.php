@@ -97,8 +97,8 @@ $controlador = new Busqueda_Controlador("","");
         </div>
         <div class="acceso_plataforma">
                <div class="btns_acceso">
-                 <a href="./busqueda.html" class="btn__accinicio">Inicia Sesión</a>
-                 <a href="./perfil_trabajador.php" class="btn__accregistro">Registrate</a>
+                 <a href="../acces/login.php" class="btn__accinicio">Inicia Sesión</a>
+                 <a href="../register.php" class="btn__accregistro">Registrate</a>
                </div>
                 
                 
