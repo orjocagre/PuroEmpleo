@@ -31,7 +31,7 @@
       </div>
       <div class="box_copyrigt">
         <hr>
-            <p>Todos los derechos reservados © 2023 
+            <p>Todos los derechos reservados © 2024 
                 <b b >PuroEmpleo </b></p>
       </div>
 

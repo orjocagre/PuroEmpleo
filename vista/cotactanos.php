@@ -20,10 +20,10 @@
                 <div class="info_contacto">
 
                     <h3>
-                        <center>(505)258921</center>
+                        <center>(505)2714-5891</center>
                     </h3>
                     <h3>
-                        <center>Email:adminpuroempleo18@gmail.com</center>
+                        <center>Email:adminPuroEmpleo18@gmail.com</center>
                     </h3>
                 </div>
             </section>

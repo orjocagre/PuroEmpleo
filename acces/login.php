@@ -4,7 +4,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Empleados</title>
+  <title>Inicio de Sesión</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -93,11 +93,19 @@
             <div class="card-header">
               Login
             </div>
+            <div class="container__header">
+
+        <div class="logo">
+            <a href="./principal.php">
+              <img src="../assets/img/logo/tabacologo.png" alt="" width="360" height="100">
+            </a>
+        </div>
+
             <div class="card-body">
 
               <form action="" method="post">
 
-                <h4>Que bueno que estas de vuelta</h4>
+                <h4>Que bueno que estas de vuelta!</h4>
 
                 <div class="mb-3">
                   <label for="usuario" class="form-label">usuario</label>

@@ -5,8 +5,9 @@ class CConexion
     {
 
 
-        // $host = "b7wh7en78fhwxbtfds8b-postgresql.services.clever-cloud.com";
+        
         $host = "bepbpehtkmlvwptycspk-postgresql.services.clever-cloud.com";
+        // $host = "b7wh7en78fhwxbtfds8b-postgresql.services.clever-cloud.com";
         // $dbname = "b7wh7en78fhwxbtfds8b";
         $dbname = "bepbpehtkmlvwptycspk";
         $username = "uqwv3xwcxq45cskcb1xy";
@@ -17,12 +18,12 @@ class CConexion
 
         try {
             //$conexion=new PDO("postgre:host=$servidor;dbname=album", $usuario, $contrasenia);
-            $conn = new PDO("pgsql:host=$host; port=$port; dbname=$dbname", $username, $password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $conexion = new PDO("pgsql:host=$host; port=$port; dbname=$dbname", $username, $password);
+            $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $error) {
             return null;
         }
-        return $conn;
+        return $conexion;
     }
 
 
